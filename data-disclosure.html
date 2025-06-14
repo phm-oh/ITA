@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การเปิดเผยข้อมูล - การประเมินคุณธรรมและความโปร่งใส</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="config.js"></script>
+     <link rel="stylesheet" href="navmenu.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        ITA
+                    </div>
+                    <div class="title-section">
+                        <h1 id="org-name">การประเมินคุณธรรมและความโปร่งใส</h1>
+                        <p id="org-name-en">Integrity and Transparency Assessment</p>
+                    </div>
+                </div>
+                <div class="year-badge">
+                    <span id="current-year">ปีงบประมาณ 2568</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <div id="nav-container">
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>การประเมินคุณธรรมและความโปร่งใส ปีงบประมาณ 2568</h1>
+                <p id="org-display">วิทยาลัยอาชีวศึกษาอุดรธานี</p>
+            </div>
+        </section>
+
+        <!-- Assessment Overview -->
+        <section class="assessment-overview">
+            <div class="container">
+                <div class="overview-header">
+                    <h2>ตัวชี้วัดที่ 9 การเปิดเผยข้อมูล</h2>
+                    <p>การเผยแพร่ข้อมูลที่เป็นปัจจุบันบนเว็บไซต์ของหน่วยงาน เพื่อเปิดเผยข้อมูลต่างๆ ของหน่วยงานให้สาธารณชนได้รับทราบ</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sub-indicator 9.1 -->
+        <section class="sub-indicator">
+            <div class="container">
+                <div class="sub-indicator-header">
+                    <h2>ตัวชี้วัดย่อยที่ 9.1 ข้อมูลพื้นฐาน</h2>
+                </div>
+
+                <!-- Basic Information Categories -->
+                <div class="data-categories">
+                    <!-- Organization Structure -->
+                    <div class="data-category" id="basic-info">
+                        <div class="category-header" onclick="toggleCategory('basic-info')">
+                            <h3>ข้อมูลพื้นฐาน</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="data-grid">
+                                <div class="data-item">
+                                    <div class="data-number">01</div>
+                                    <div class="data-content">
+                                        <h4>โครงสร้าง</h4>
+                                        <p>แผนผังแสดงโครงสร้างการแบ่งส่วนราชการของหน่วยงาน</p>
+                                        <div class="data-actions">
+                                            <a href="https://www.udvc.ac.th/%e0%b9%82%e0%b8%84%e0%b8%a3%e0%b8%87%e0%b8%aa%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%87%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%9a%e0%b8%a3%e0%b8%b4%e0%b8%ab%e0%b8%b2%e0%b8%a3%e0%b8%87%e0%b8%b2%e0%b8%99/" class="data-link">📄 ดูโครงสร้าง</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">02</div>
+                                    <div class="data-content">
+                                        <h4>ข้อมูลผู้บริหาร</h4>
+                                        <p>รายนามของผู้บริหารของหน่วยงาน ประกอบด้วยชื่อ-นามสกุล ตำแหน่ง รูปถ่าย ช่องทางการติดต่อ</p>
+                                        <div class="data-actions">
+                                            <a href="https://www.udvc.ac.th/%e0%b8%9d%e0%b9%88%e0%b8%b2%e0%b8%a2%e0%b8%9a%e0%b8%a3%e0%b8%b4%e0%b8%ab%e0%b8%b2%e0%b8%a3/" class="data-link">👥 ดูข้อมูลผู้บริหาร</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">03</div>
+                                    <div class="data-content">
+                                        <h4>อำนาจหน้าที่</h4>
+                                        <p>ข้อมูลหน้าที่และอำนาจของหน่วยงานตามที่กฎหมายกำหนด</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">⚖️ ดูอำนาจหน้าที่</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">04</div>
+                                    <div class="data-content">
+                                        <h4>แผนพัฒนาสถานศึกษา</h4>
+                                        <p>แผนการดำเนินภารกิจของหน่วยงานที่มีระยะมากกว่า 1 ปี</p>
+                                        <div class="data-actions">
+                                            <a href="https://www.udvc.ac.th/%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%e0%b8%87%e0%b8%9a%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%a1%e0%b8%b2%e0%b8%93/" class="data-link">📋 ดูแผนพัฒนา</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">05</div>
+                                    <div class="data-content">
+                                        <h4>ข้อมูลการติดต่อ</h4>
+                                        <p>ที่อยู่หน่วยงาน หมายเลขโทรศัพท์ โทรสาร อีเมล แผนที่ตั้งหน่วยงาน</p>
+                                        <div class="data-actions">
+                                            <a href="contact.html" class="data-link">📞 ดูข้อมูลติดต่อ</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">06</div>
+                                    <div class="data-content">
+                                        <h4>กฎหมายที่เกี่ยวข้อง</h4>
+                                        <p>กฎหมายที่เกี่ยวข้องกับการดำเนินงานหรือการปฏิบัติงานของหน่วยงาน</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">⚖️ ดูกฎหมายที่เกี่ยวข้อง</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Public Relations -->
+                    <div class="data-category" id="pr-info">
+                        <div class="category-header" onclick="toggleCategory('pr-info')">
+                            <h3>การประชาสัมพันธ์</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="data-grid">
+                                <div class="data-item full-width">
+                                    <div class="data-number">07</div>
+                                    <div class="data-content">
+                                        <h4>ข่าวประชาสัมพันธ์</h4>
+                                        <p>ข้อมูลข่าวสารต่างๆ ที่เกี่ยวข้องกับการดำเนินงานตามอำนาจหน้าที่หรือภารกิจของหน่วยงาน</p>
+                                        <div class="data-actions">
+                                            <a href="https://www.udvc.ac.th/category/news/" class="data-link">📰 ดูข่าวประชาสัมพันธ์</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Interaction -->
+                    <div class="data-category" id="interaction-info">
+                        <div class="category-header" onclick="toggleCategory('interaction-info')">
+                            <h3>การปฏิสัมพันธ์ข้อมูล</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="data-grid">
+                                <div class="data-item">
+                                    <div class="data-number">08</div>
+                                    <div class="data-content">
+                                        <h4>Q&A</h4>
+                                        <p>ช่องทางที่บุคคลภายนอกสามารถสอบถามข้อมูลต่างๆ ได้ และหน่วยงานสามารถสื่อสารให้คำตอบได้</p>
+                                        <div class="data-actions">
+                                            <a href="https://www.facebook.com/UDVCrcheewaudon/" class="data-link">❓ ถาม-ตอบ</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">09</div>
+                                    <div class="data-content">
+                                        <h4>Social Network</h4>
+                                        <p>เครือข่ายสังคมออนไลน์ของหน่วยงาน เช่น Facebook, Twitter, Instagram</p>
+                                        <div class="data-actions">
+                                            <a href="https://www.facebook.com/UDVCrcheewaudon/" class="data-link">📱 Social Media</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sub-indicator 9.2 -->
+        <section class="sub-indicator sub-indicator-alt">
+            <div class="container">
+                <div class="sub-indicator-header">
+                    <h2>ตัวชี้วัดย่อยที่ 9.2 การบริหารงาน</h2>
+                </div>
+
+                <!-- Management Categories -->
+                <div class="data-categories">
+                    <!-- Operations -->
+                    <div class="data-category" id="operations">
+                        <div class="category-header" onclick="toggleCategory('operations')">
+                            <h3>การดำเนินงาน</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="data-grid">
+                                <div class="data-item">
+                                    <div class="data-number">10</div>
+                                    <div class="data-content">
+                                        <h4>แผนดำเนินงานประจำปี</h4>
+                                        <p>แผนการดำเนินภารกิจของหน่วยงานที่มีระยะ 1 ปี</p>
+                                        <div class="data-actions">
+                                            <a href="https://www.udvc.ac.th/%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%e0%b8%87%e0%b8%9a%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%a1%e0%b8%b2%e0%b8%93/" class="data-link">📊 ดูแผนดำเนินงาน</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">11</div>
+                                    <div class="data-content">
+                                        <h4>รายงานการกำกับติดตามการดำเนินงานประจำปีรอบ 6 เดือน</h4>
+                                        <p>ความก้าวหน้าในการดำเนินงานตามแผนดำเนินงานประจำปี รอบ 6 เดือน</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">📈 ดูรายงานติดตาม</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">12</div>
+                                    <div class="data-content">
+                                        <h4>รายงานผลการดำเนินงานประจำปี</h4>
+                                        <p>ผลการดำเนินงานตามแผนดำเนินงานประจำปี</p>
+                                        <div class="data-actions">
+                                            <a href="https://www.udvc.ac.th/%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%e0%b8%87%e0%b8%9a%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%a1%e0%b8%b2%e0%b8%93/" class="data-link">📋 ดูรายงานผล</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Work Practices -->
+                    <div class="data-category" id="practices">
+                        <div class="category-header" onclick="toggleCategory('practices')">
+                            <h3>การปฏิบัติงาน</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="data-grid">
+                                <div class="data-item full-width">
+                                    <div class="data-number">13</div>
+                                    <div class="data-content">
+                                        <h4>คู่มือหรือมาตรฐานการปฏิบัติงาน</h4>
+                                        <p>คู่มือหรือแนวทางการปฏิบัติงานที่เจ้าหน้าที่ของหน่วยงานใช้ยึดถือปฏิบัติให้เป็นมาตรฐานเดียวกัน</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">📚 ดูคู่มือปฏิบัติงาน</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Services -->
+                    <div class="data-category" id="services">
+                        <div class="category-header" onclick="toggleCategory('services')">
+                            <h3>การให้บริการ</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="data-grid">
+                                <div class="data-item">
+                                    <div class="data-number">14</div>
+                                    <div class="data-content">
+                                        <h4>คู่มือหรือมาตรฐานการให้บริการ</h4>
+                                        <p>คู่มือหรือแนวทางการปฏิบัติที่ผู้รับบริการหรือผู้มาติดต่อกับหน่วยงานใช้เป็นข้อมูลในการขอรับบริการ</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">📖 ดูคู่มือบริการ</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">15</div>
+                                    <div class="data-content">
+                                        <h4>ข้อมูลเชิงสถิติการให้บริการ</h4>
+                                        <p>ข้อมูลสถิติการให้บริการตามภารกิจของหน่วยงาน</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">📊 ดูสถิติบริการ</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">16</div>
+                                    <div class="data-content">
+                                        <h4>รายงานผลการสำรวจความพึงพอใจ</h4>
+                                        <p>ผลสำรวจความพึงพอใจการให้บริการตามอำนาจหน้าที่หรือภารกิจของหน่วยงาน</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">😊 ดูความพึงพอใจ</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">17</div>
+                                    <div class="data-content">
+                                        <h4>E-Service</h4>
+                                        <p>ช่องทางที่บุคคลภายนอกสามารถขอรับบริการตามอำนาจหน้าที่ภารกิจของหน่วยงานผ่านช่องทางออนไลน์</p>
+                                        <div class="data-actions">
+                                            <a href="https://udvc.appedr.com" class="data-link">💻 ใช้บริการออนไลน์</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sub-indicator 9.3 -->
+        <section class="sub-indicator">
+            <div class="container">
+                <div class="sub-indicator-header">
+                    <h2>ตัวชี้วัดย่อยที่ 9.3 การบริหารเงินงบประมาณ</h2>
+                </div>
+
+                <!-- Budget Management Categories -->
+                <div class="data-categories">
+                    <!-- Budget Planning -->
+                    <div class="data-category" id="budget-planning">
+                        <div class="category-header" onclick="toggleCategory('budget-planning')">
+                            <h3>แผนการใช้จ่ายงบประมาณประจำปี</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="data-grid">
+                                <div class="data-item">
+                                    <div class="data-number">18</div>
+                                    <div class="data-content">
+                                        <h4>แผนการใช้จ่ายงบประมาณประจำปี</h4>
+                                        <p>แผนการใช้จ่ายงบประมาณของหน่วยงานที่มีระยะ 1 ปี</p>
+                                        <div class="data-actions">
+                                            <a href="https://www.udvc.ac.th/%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%e0%b8%87%e0%b8%9a%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%a1%e0%b8%b2%e0%b8%93/" class="data-link">💰 ดูแผนงบประมาณ</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">19</div>
+                                    <div class="data-content">
+                                        <h4>รายงานการกำกับติดตามการใช้จ่ายงบประมาณประจำปีรอบ 6 เดือน</h4>
+                                        <p>ความก้าวหน้าในการดำเนินงานตามแผนการใช้จ่ายงบประมาণประจำปี</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">📈 ดูรายงานติดตาม</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">20</div>
+                                    <div class="data-content">
+                                        <h4>รายงานผลการใช้จ่ายงบประมาณประจำปี</h4>
+                                        <p>ผลการดำเนินงานตามแผนการใช้จ่ายงบประมาณประจำปี</p>
+                                        <div class="data-actions">
+                                            <a href="https://www.udvc.ac.th/%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%e0%b8%87%e0%b8%9a%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%a1%e0%b8%b2%e0%b8%93/" class="data-link">📊 ดูรายงานผล</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Procurement -->
+                    <div class="data-category" id="procurement">
+                        <div class="category-header" onclick="toggleCategory('procurement')">
+                            <h3>การจัดซื้อจัดจ้างหรือการจัดหาพัสดุ</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="data-grid">
+                                <div class="data-item">
+                                    <div class="data-number">21</div>
+                                    <div class="data-content">
+                                        <h4>แผนการจัดซื้อจัดจ้างหรือแผนการจัดหาพัสดุ</h4>
+                                        <p>แผนการจัดซื้อจัดจ้างหรือแผนการจัดหาพัสดุตามที่หน่วยงานจะต้องดำเนินการ</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">📋 ดูแผนจัดซื้อจัดจ้าง</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">22</div>
+                                    <div class="data-content">
+                                        <h4>ประกาศต่างๆ เกี่ยวกับการจัดซื้อจัดจ้างหรือการจัดหาพัสดุ</h4>
+                                        <p>ประกาศเชิญชวน ประกาศผลการจัดซื้อจัดจ้าง ตามพระราชบัญญัติการจัดซื้อจัดจ้างและการบริหารพัสดุภาครัฐ</p>
+                                        <div class="data-actions">
+                                            <a href="https://www.udvc.ac.th/%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%81%e0%b8%b2%e0%b8%a8%e0%b8%a3%e0%b8%b2%e0%b8%a2%e0%b8%8a%e0%b8%b7%e0%b9%88%e0%b8%ad%e0%b8%9c%e0%b8%b9%e0%b9%89%e0%b8%8a%e0%b8%99%e0%b8%b0%e0%b8%81%e0%b8%b2%e0%b8%a3-2/" class="data-link">📢 ดูประกาศ</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">23</div>
+                                    <div class="data-content">
+                                        <h4>สรุปผลการจัดซื้อจัดจ้างหรือการจัดหาพัสดุรายเดือน</h4>
+                                        <p>สรุปผลการจัดซื้อจัดจ้างของหน่วยงาน จำแนกข้อมูลเป็นรายเดือน</p>
+                                        <div class="data-actions">
+                                            <a href="https://www.udvc.ac.th/%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%81%e0%b8%b2%e0%b8%a8%e0%b8%a3%e0%b8%b2%e0%b8%a2%e0%b8%8a%e0%b8%b7%e0%b9%88%e0%b8%ad%e0%b8%9c%e0%b8%b9%e0%b9%89%e0%b8%8a%e0%b8%99%e0%b8%b0%e0%b8%81%e0%b8%b2%e0%b8%a3-2/" class="data-link">📑 ดูสรุปผลรายเดือน</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">24</div>
+                                    <div class="data-content">
+                                        <h4>รายงานผลการจัดซื้อจัดจ้างหรือการจัดหาพัสดุประจำปี</h4>
+                                        <p>ผลการจัดซื้อจัดจ้างของหน่วยงาน งบประมาณที่ใช้ ปัญหา อุปสรรค ข้อเสนอแนะ</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">📈 ดูรายงานผลประจำปี</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sub-indicator 9.4 -->
+        <section class="sub-indicator sub-indicator-alt">
+            <div class="container">
+                <div class="sub-indicator-header">
+                    <h2>ตัวชี้วัดย่อยที่ 9.4 การบริหารและพัฒนาทรัพยากรบุคคล</h2>
+                </div>
+
+                <!-- HR Management Categories -->
+                <div class="data-categories">
+                    <!-- Human Resource Management -->
+                    <div class="data-category" id="hr-management">
+                        <div class="category-header" onclick="toggleCategory('hr-management')">
+                            <h3>การบริหารและพัฒนาทรัพยากรบุคคล</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="data-grid">
+                                <div class="data-item">
+                                    <div class="data-number">25</div>
+                                    <div class="data-content">
+                                        <h4>นโยบายการบริหารทรัพยากรบุคคล</h4>
+                                        <p>นโยบายการบริหารทรัพยากรบุคคลที่มีจุดมุ่งหมายเพื่อให้เกิดการบริหารที่มีความโปร่งใสและมีคุณธรรม</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">👥 ดูนโยบาย HR</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">26</div>
+                                    <div class="data-content">
+                                        <h4>การดำเนินการตามนโยบายการบริหารทรัพยากรบุคคล</h4>
+                                        <p>การวางแผนกำลังคน การสรรหา การพัฒนาบุคลากร การประเมินผลการปฏิบัติงาน การส่งเสริมจริยธรรม</p>
+                                        <div class="data-actions">
+                                            <a href="https://www.udvc.ac.th/%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%81%e0%b8%b2%e0%b8%a8-%e0%b8%a3%e0%b8%b1%e0%b8%9a%e0%b8%aa%e0%b8%a1%e0%b8%b1%e0%b8%84%e0%b8%a3%e0%b8%9a%e0%b8%b8%e0%b8%84%e0%b8%84%e0%b8%a5%e0%b9%80%e0%b8%9e-3/" class="data-link">⚡ ดูการดำเนินการ HR</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">27</div>
+                                    <div class="data-content">
+                                        <h4>หลักเกณฑ์การบริหารและพัฒนาทรัพยากรบุคคล</h4>
+                                        <p>หลักเกณฑ์การสรรหา การบรรจุแต่งตั้ง การพัฒนา การประเมินผลการปฏิบัติงาน การให้คุณให้โทษ</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">📐 ดูหลักเกณฑ์ HR</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">28</div>
+                                    <div class="data-content">
+                                        <h4>รายงานผลการบริหารและพัฒนาทรัพยากรบุคคลประจำปี</h4>
+                                        <p>ผลการบริหารและพัฒนาทรัพยากรบุคคล ผลการวิเคราะห์การบริหารและพัฒนาทรัพยากรบุคคล</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">📊 ดูรายงานผล HR</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sub-indicator 9.5 -->
+        <section class="sub-indicator">
+            <div class="container">
+                <div class="sub-indicator-header">
+                    <h2>ตัวชี้วัดย่อยที่ 9.5 การส่งเสริมความโปร่งใส</h2>
+                </div>
+
+                <!-- Transparency Promotion Categories -->
+                <div class="data-categories">
+                    <!-- Complaint Management -->
+                    <div class="data-category" id="complaint-management">
+                        <div class="category-header" onclick="toggleCategory('complaint-management')">
+                            <h3>การจัดการเรื่องร้องเรียนการทุจริตและประพฤติมิชอบ</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="data-grid">
+                                <div class="data-item">
+                                    <div class="data-number">29</div>
+                                    <div class="data-content">
+                                        <h4>แนวปฏิบัติการจัดการเรื่องร้องเรียนการทุจริตและประพฤติมิชอบ</h4>
+                                        <p>คู่มือหรือแนวทางการดำเนินการต่อเรื่องร้องเรียนที่เกี่ยวข้องกับการทุจริตและประพฤติมิชอบ</p>
+                                        <div class="data-actions">
+                                            <a href="/indicator9/9.5/complaint-guidelines.html" class="data-link">📋 ดูแนวปฏิบัติ</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">30</div>
+                                    <div class="data-content">
+                                        <h4>ช่องทางแจ้งเรื่องร้องเรียนการทุจริตและประพฤติมิชอบ</h4>
+                                        <p>ช่องทางที่บุคคลภายนอกสามารถแจ้งเรื่องร้องเรียนเกี่ยวกับการทุจริตและประพฤติมิชอบผ่านช่องทางออนไลน์</p>
+                                        <div class="data-actions">
+                                            <a href="/complaint/complaint-form.html" class="data-link">📞 ช่องทางร้องเรียน</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">31</div>
+                                    <div class="data-content">
+                                        <h4>ข้อมูลเชิงสถิติเรื่องร้องเรียนการทุจริตและประพฤติมิชอบประจำปี</h4>
+                                        <p>ข้อมูลสถิติเรื่องร้องเรียนการทุจริต จำนวนเรื่อง เรื่องที่ดำเนินการแล้วเสร็จ เรื่องที่อยู่ระหว่างดำเนินการ</p>
+                                        <div class="data-actions">
+                                            <a href="/complaint/complaint-statistics.html" class="data-link">📊 ดูสถิติร้องเรียน</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Participation -->
+                    <div class="data-category" id="participation">
+                        <div class="category-header" onclick="toggleCategory('participation')">
+                            <h3>การเปิดโอกาสให้เกิดการมีส่วนร่วม</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="data-grid">
+                                <div class="data-item">
+                                    <div class="data-number">32</div>
+                                    <div class="data-content">
+                                        <h4>ช่องทางการรับฟังความคิดเห็น</h4>
+                                        <p>ช่องทางที่บุคคลภายนอกสามารถแสดงความคิดเห็นต่อการดำเนินงานตามภารกิจของหน่วยงานผ่านช่องทางออนไลน์</p>
+                                        <div class="data-actions">
+                                            <a href="/feedback/feedback-form.html" class="data-link">💬 ช่องทางรับฟัง</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">33</div>
+                                    <div class="data-content">
+                                        <h4>การเปิดโอกาสให้เกิดการมีส่วนร่วม</h4>
+                                        <p>การดำเนินการหรือกิจกรรมที่เปิดโอกาสให้ผู้มีส่วนได้ส่วนเสียมีส่วนร่วมในการดำเนินงาน ร่วมวางแผน ร่วมแลกเปลี่ยนความคิดเห็น</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">🤝 ดูการมีส่วนร่วม</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sub-indicator 10.1 -->
+        <section class="sub-indicator sub-indicator-alt">
+            <div class="container">
+                <div class="sub-indicator-header">
+                    <h2>ตัวชี้วัดที่ 10 การป้องกันการทุจริต</h2>
+                    <p>การเผยแพร่ข้อมูลเพื่อเปิดเผยการดำเนินการต่างๆ ของหน่วยงานให้สาธารณชนได้รับทราบ</p>
+                </div>
+
+                <!-- Corruption Prevention Categories -->
+                <div class="data-categories">
+                    <!-- Management Integrity -->
+                    <div class="data-category" id="management-integrity">
+                        <div class="category-header" onclick="toggleCategory('management-integrity')">
+                            <h3>เจตจำนงสุจริตของผู้บริหาร</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="data-grid">
+                                <div class="data-item">
+                                    <div class="data-number">34</div>
+                                    <div class="data-content">
+                                        <h4>เจตจำนงสุจริตของผู้บริหาร</h4>
+                                        <p>เนื้อหาเจตนารมณ์หรือคำมั่นว่าจะปฏิบัติหน้าที่และบริหารหน่วยงานอย่างซื่อสัตย์สุจริต โปร่งใส</p>
+                                        <div class="data-actions">
+                                            <a href="/indicator10/10.1/integrity-pledge.html" class="data-link">✨ ดูเจตจำนงสุจริต</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">35</div>
+                                    <div class="data-content">
+                                        <h4>การมีส่วนร่วมของผู้บริหาร</h4>
+                                        <p>การดำเนินการหรือกิจกรรมที่แสดงถึงการมีส่วนร่วมของผู้บริหารในการส่งเสริมหน่วยงานด้านคุณธรรมและโปร่งใส</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">👨‍💼 ดูการมีส่วนร่วม</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Risk Assessment -->
+                    <div class="data-category" id="risk-assessment">
+                        <div class="category-header" onclick="toggleCategory('risk-assessment')">
+                            <h3>การประเมินความเสี่ยงเพื่อป้องกันการทุจริต</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="data-grid">
+                                <div class="data-item">
+                                    <div class="data-number">36</div>
+                                    <div class="data-content">
+                                        <h4>การประเมินความเสี่ยงการทุจริตประจำปี</h4>
+                                        <p>ผลการประเมินความเสี่ยงของการดำเนินงานที่อาจก่อให้เกิดการทุจริตหรือการขัดกันระหว่างผลประโยชน์</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">⚠️ ดูการประเมินความเสี่ยง</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">37</div>
+                                    <div class="data-content">
+                                        <h4>การดำเนินการเพื่อจัดการความเสี่ยงการทุจริต</h4>
+                                        <p>การดำเนินการหรือกิจกรรมที่แสดงถึงการจัดการความเสี่ยงในกรณีที่อาจก่อให้เกิดการทุจริต</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">🛡️ ดูการจัดการความเสี่ยง</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Corporate Culture -->
+                    <div class="data-category" id="corporate-culture">
+                        <div class="category-header" onclick="toggleCategory('corporate-culture')">
+                            <h3>การเสริมสร้างวัฒนธรรมองค์กร</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="data-grid">
+                                <div class="data-item full-width">
+                                    <div class="data-number">38</div>
+                                    <div class="data-content">
+                                        <h4>การเสริมสร้างวัฒนธรรมองค์กร</h4>
+                                        <p>การดำเนินการหรือกิจกรรมที่แสดงถึงการเสริมสร้างวัฒนธรรมองค์กรให้เจ้าหน้าที่มีทัศนคติ ค่านิยม ในการปฏิบัติงานอย่างซื่อสัตย์สุจริต</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">🏛️ ดูการเสริมสร้างวัฒนธรรม</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Anti-Corruption Plan -->
+                    <div class="data-category" id="anti-corruption-plan">
+                        <div class="category-header" onclick="toggleCategory('anti-corruption-plan')">
+                            <h3>แผนป้องกันการทุจริต</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="data-grid">
+                                <div class="data-item">
+                                    <div class="data-number">39</div>
+                                    <div class="data-content">
+                                        <h4>แผนปฏิบัติการป้องกันการทุจริต</h4>
+                                        <p>แผนปฏิบัติการที่มีวัตถุประสงค์เพื่อป้องกันการทุจริตหรือพัฒนาด้านคุณธรรมและความโปร่งใสของหน่วยงาน</p>
+                                        <div class="data-actions">
+                                            <a href="/indicator10/10.1/anti-corruption-plan.html" class="data-link">📋 ดูแผนป้องกันการทุจริต</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">40</div>
+                                    <div class="data-content">
+                                        <h4>รายงานการกำกับติดตามการดำเนินการป้องกันการทุจริตประจำปีรอบ 6 เดือน</h4>
+                                        <p>ความก้าวหน้าในการดำเนินงานตามแผนปฏิบัติการป้องกันการทุจริต</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">📈 ดูรายงานติดตาม</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">41</div>
+                                    <div class="data-content">
+                                        <h4>รายงานผลการดำเนินการป้องกันการทุจริตประจำปี</h4>
+                                        <p>ผลการดำเนินงานตามแผนปฏิบัติการป้องกันการทุจริต ผลการดำเนินการโครงการ ผลการใช้จ่ายงบประมาณ</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">📊 ดูรายงานผลประจำปี</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Internal Measures -->
+                    <div class="data-category" id="internal-measures">
+                        <div class="category-header" onclick="toggleCategory('internal-measures')">
+                            <h3>มาตรการภายในเพื่อป้องกันการทุจริต</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <div class="data-grid">
+                                <div class="data-item">
+                                    <div class="data-number">42</div>
+                                    <div class="data-content">
+                                        <h4>มาตรการส่งเสริมคุณธรรมและความโปร่งใสภายในหน่วยงาน</h4>
+                                        <p>การวิเคราะห์ผลการประเมินคุณธรรมและความโปร่งใส และมาตรการเพื่อขับเคลื่อนการส่งเสริมคุณธรรมและความโปร่งใส</p>
+                                        <div class="data-actions">
+                                            <a href="/indicator10/10.2/ethics-measures.html" class="data-link">🎯 ดูมาตรการส่งเสริม</a>
+                                            <!-- <a href="#" class="data-link">📥 ดาวน์โหลด</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="data-item">
+                                    <div class="data-number">43</div>
+                                    <div class="data-content">
+                                        <h4>การดำเนินการตามมาตรการส่งเสริมคุณธรรมและความโปร่งใสภายในหน่วยงาน</h4>
+                                        <p>ผลการดำเนินการตามมาตรการเพื่อส่งเสริมคุณธรรมและความโปร่งใสภายในหน่วยงาน</p>
+                                        <div class="data-actions">
+                                            <a href="#" class="data-link">⚡ ดูการดำเนินการ</a>
+                                            <a href="#" class="data-link">📥 ดาวน์โหลด</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download All Section -->
+        <!-- <section class="download-all">
+            <div class="container">
+                <div class="download-card">
+                    <div class="download-content">
+                        <h3>ดาวน์โหลดข้อมูลทั้งหมด</h3>
+                        <p>ดาวน์โหลดเอกสารและข้อมูลการเปิดเผยข้อมูลทั้งหมดในไฟล์เดียว</p>
+                    </div>
+                    <div class="download-actions">
+                        <a href="#" class="download-btn primary">📥 ดาวน์โหลดทั้งหมด (PDF)</a>
+                        <a href="#" class="download-btn secondary">📊 ดาวน์โหลดทั้งหมด (Excel)</a>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>เกี่ยวกับ ITA</h3>
+                    <p>การประเมินคุณธรรมและความโปร่งใสในการดำเนินงานของหน่วยงานภาครัฐ</p>
+                    <p id="footer-org-name">วิทยาลัยอาชีวศึกษาอุดรธานี</p>
+                </div>
+                <div class="footer-section">
+                    <h3>ลิงก์ที่เกี่ยวข้อง</h3>
+                    <ul>
+                        <li><a href="https://www.nacc.go.th" target="_blank">สำนักงาน ป.ป.ช.</a></li>
+                        <li><a href="https://itas.nacc.go.th" target="_blank">ระบบ ITAS</a></li>
+                        <li><a href="https://www.vec.go.th" target="_blank">สำนักงาน กศน.</a></li>
+                        <li><a href="https://www.transparency.org" target="_blank">Transparency International</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>ติดต่อเรา</h3>
+                    <p>โทร: <span id="footer-phone">042-246-690</span><br>
+                    อีเมล: <span id="footer-email">udvc@udvc.ac.th</span></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="footer-year">2568</span> สงวนลิขสิทธิ์ | <span id="footer-org">วิทยาลัยอาชีวศึกษาอุดรธานี</span></p>
+            </div>
+        </div>
+    </footer>
+
+     <!-- <script src="navloader.js"></script> -->
+    <script src="script.js"></script>
+    <!-- <script>
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof loadNavigation === 'function') {
+      loadNavigation();
+    }
+  });
+</script> -->
+
+<script>
+function toggleCategory(categoryId) {
+    const category = document.getElementById(categoryId);
+    const content = category.querySelector('.category-content');
+    const icon = category.querySelector('.toggle-icon');
+    
+    if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        icon.textContent = '▲';
+        category.classList.add('active');
+    } else {
+        content.style.display = 'none';
+        icon.textContent = '▼';
+        category.classList.remove('active');
+    }
+}
+
+// Initially show all categories
+document.addEventListener('DOMContentLoaded', function() {
+    const categories = document.querySelectorAll('.data-category');
+    categories.forEach(category => {
+        const content = category.querySelector('.category-content');
+        content.style.display = 'block';
+        category.classList.add('active');
+    });
+});
+</script>
+   
+</body>
+</html>

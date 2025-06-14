@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ช่องทางการรับฟังความคิดเห็น - วิทยาลัยอาชีวศึกษาอุดรธานี</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Sarabun", sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .header p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        margin-bottom: 10px;
+      }
+
+      .header .org-name {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 25px;
+        display: inline-block;
+      }
+
+      .content {
+        padding: 40px;
+      }
+
+      .intro {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .intro h2 {
+        color: #333;
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+
+      .intro p {
+        color: #666;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .form-section {
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+      }
+
+      .form-section h3 {
+        color: #667eea;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .form-container {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      iframe {
+        width: 100%;
+        height: 1000px;
+        border: none;
+        border-radius: 10px;
+      }
+
+      .benefits {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 40px;
+      }
+
+      .benefit-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        transform: translateY(0);
+        transition: transform 0.3s ease;
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .benefit-card .icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+
+      .benefit-card h4 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .benefit-card p {
+        font-size: 1rem;
+        opacity: 0.9;
+        line-height: 1.5;
+      }
+
+      .contact-info {
+        background: #e3f2fd;
+        border-radius: 15px;
+        padding: 30px;
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      .contact-info h3 {
+        color: #1976d2;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+
+      .contact-info p {
+        color: #555;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #667eea;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .back-button:hover {
+        background: #667eea;
+        color: white;
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        .header {
+          padding: 30px 20px;
+        }
+
+        .header h1 {
+          font-size: 2rem;
+        }
+
+        .content {
+          padding: 30px 20px;
+        }
+
+        .intro h2 {
+          font-size: 1.5rem;
+        }
+
+        iframe {
+          height: 600px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="data-disclosure.html" class="back-button">← กลับหน้า ITA</a>
+
+    <div class="container">
+      <div class="header">
+        <h1>💬 ช่องทางการรับฟังความคิดเห็น</h1>
+        <p>เราต้องการรับฟังความคิดเห็นและข้อเสนอแนะจากท่าน</p>
+        <p>เพื่อพัฒนาการดำเนินงานให้ดียิ่งขึ้น</p>
+        <div class="org-name">วิทยาลัยอาชีวศึกษาอุดรธานี</div>
+      </div>
+
+      <div class="content">
+        <div class="intro">
+          <h2>🎯 ความคิดเห็นของท่านมีค่า</h2>
+          <p>
+            ตามนโยบายการส่งเสริมความโปร่งใสและการมีส่วนร่วมของประชาชน วิทยาลัยฯ
+            ได้จัดให้มีช่องทางรับฟังความคิดเห็นและข้อเสนอแนะ
+            เพื่อนำไปสู่การพัฒนาการดำเนินงานให้ตอบสนองความต้องการของสังคม
+          </p>
+        </div>
+
+        <div class="form-section">
+          <h3>📝 แบบฟอร์มแสดงความคิดเห็น</h3>
+
+          <!-- ตรงนี้จะใส่ Google Form -->
+          <div class="form-container">
+            <iframe
+              src="https://docs.google.com/forms/d/1yE7Q3yuJsFYOAfdxcsZcJz7VbJ4fWsCTVRZapLYmW2E/viewform?embedded=true"
+              width="100%"
+              height="1000"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+            >
+              กำลังโหลด...
+            </iframe>
+
+            <div
+              style="
+                background: #f0f0f0;
+                padding: 50px;
+                text-align: center;
+                border-radius: 10px;
+                color: #666;
+              "
+            >
+              <!-- <h3>📋 วิธีการใส่ Google Form</h3>
+              <p style="margin: 20px 0; line-height: 1.6">
+                1. สร้าง Google Form ใหม่<br />
+                2. Copy embed code<br />
+                3. แทนที่ในตำแหน่งนี้
+              </p> -->
+              <!-- <div
+                style="
+                  background: white;
+                  padding: 20px;
+                  border-radius: 5px;
+                  margin: 20px 0;
+                  font-family: monospace;
+                  font-size: 14px;
+                  text-align: left;
+                "
+              >
+                &lt;iframe
+                src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
+                width="100%" height="800" frameborder="0"&gt;&lt;/iframe&gt;
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="benefits">
+          <div class="benefit-card">
+            <div class="icon">🎯</div>
+            <h4>ความคิดเห็นทั่วไป</h4>
+            <p>แสดงความคิดเห็นต่อการดำเนินงานของวิทยาลัย</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="icon">💡</div>
+            <h4>ข้อเสนอแนะ</h4>
+            <p>เสนอแนวทางพัฒนาการให้บริการ</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="icon">⭐</div>
+            <h4>การประเมินงาน</h4>
+            <p>ประเมินคุณภาพการปฏิบัติงานของเจ้าหน้าที่</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="icon">🔄</div>
+            <h4>การปรับปรุง</h4>
+            <p>ข้อเสนอแนะเพื่อการปรับปรุงกระบวนการทำงาน</p>
+          </div>
+        </div>
+
+        <div class="contact-info">
+          <h3>📞 ช่องทางการติดต่ออื่นๆ</h3>
+          <p>
+            <strong>โทรศัพท์:</strong> 042-246-690<br />
+            <strong>อีเมล:</strong> udvc@udvc.ac.th<br />
+            <strong>Facebook:</strong>
+            <a href="https://www.facebook.com/UDVCrcheewaudon/" target="_blank"
+              >วิทยาลัยอาชีวศึกษาอุดรธานี</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // เพิ่ม animation เมื่อโหลดหน้า
+      document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".benefit-card");
+        cards.forEach((card, index) => {
+          setTimeout(() => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(20px)";
+            card.style.transition = "all 0.6s ease";
+            setTimeout(() => {
+              card.style.opacity = "1";
+              card.style.transform = "translateY(0)";
+            }, 100);
+          }, index * 200);
+        });
+      });
+    </script>
+  </body>
+</html>

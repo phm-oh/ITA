@@ -1,0 +1,349 @@
+<!-- 
+ไฟล์: integrity-pledge.html
+Path: indicator10/10.1/integrity-pledge.html
+ตัวชี้วัดที่ 10.1 การดำเนินการเพื่อป้องกันการทุจริต - ข้อ 34
+-->
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เจตจำนงสุจริตของผู้บริหาร - วิทยาลัยอาชีวศึกษาอุดรธานี</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sarabun', Arial, sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            background: white;
+            color: #dc2626;
+            padding: 12px 25px;
+            border: 2px solid #dc2626;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .back-link:hover {
+            background: #dc2626;
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #dc2626;
+            color: #666;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .pledge-document {
+            background: white;
+            border: 3px solid #dc2626;
+            border-radius: 20px;
+            padding: 50px;
+            margin: 30px 0;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .pledge-document::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #dc2626, #b91c1c, #dc2626);
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .pledge-header {
+            text-align: center;
+            border-bottom: 3px double #dc2626;
+            padding-bottom: 25px;
+            margin-bottom: 40px;
+        }
+
+        .pledge-header h1 {
+            color: #dc2626;
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .pledge-header h2 {
+            color: #666;
+            font-size: 1.4rem;
+            font-weight: 500;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .pledge-header p {
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        .pledge-content {
+            line-height: 2.2;
+            text-align: justify;
+            color: #333;
+            font-size: 1.05rem;
+        }
+
+        .pledge-intro {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #dc2626;
+            font-weight: 600;
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #dc2626;
+        }
+
+        .principle-section {
+            background: linear-gradient(135deg, #fef2f2 0%, #fff5f5 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #dc2626;
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.1);
+        }
+
+        .principle-section h3 {
+            text-align: center;
+            color: #dc2626;
+            border-bottom: 2px solid #dc2626;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+        }
+
+        .principle-item {
+            margin: 25px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .principle-item h4 {
+            color: #dc2626;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #fee2e2;
+            padding-bottom: 8px;
+        }
+
+        .principle-item p {
+            margin-bottom: 10px;
+            text-indent: 2em;
+        }
+
+        .oath-section {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+            border: 2px solid #dc2626;
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.2);
+        }
+
+        .oath-section h4 {
+            color: #dc2626;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .oath-text {
+            font-style: italic;
+            font-size: 1.15rem;
+            line-height: 2.2;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .pledge-signature {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 3px solid #dc2626;
+        }
+
+        .pledge-signature p {
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .signature-line {
+            border-bottom: 2px solid #333;
+            width: 350px;
+            margin: 25px auto;
+            padding-bottom: 8px;
+            position: relative;
+        }
+
+        .signature-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #dc2626;
+        }
+
+        .signature-title {
+            font-weight: 600;
+            color: #666;
+        }
+
+        .signature-date {
+            font-style: italic;
+            color: #666;
+            margin-top: 25px;
+        }
+
+        .official-seal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            border: 3px solid #dc2626;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            font-size: 0.8rem;
+            color: #dc2626;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #org-logo-large{
+            width: 150%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .pledge-document {
+                padding: 30px 20px;
+            }
+            
+            .pledge-header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+
+            .official-seal {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../data-disclosure.html" class="back-link">← กลับสู่หน้าเปิดเผยข้อมูล</a>
+        
+        <div class="breadcrumb">
+            📍 ตัวชี้วัดที่ 10.1 การดำเนินการเพื่อป้องกันการทุจริต → ข้อ 34 เจตจำนงสุจริตของผู้บริหาร
+        </div>
+
+        <div class="pledge-document">
+            <div class="official-seal">
+                <!-- ตราสัญลักษณ์<br>
+                วิทยาลัย<br>
+                อาชีวศึกษา<br>
+                อุดรธานี -->
+                 <img src="https://res.cloudinary.com/dzysz9ib8/image/upload/v1748184300/Udvc.imp_gork69.png" alt="Logo" id="org-logo-large">
+            </div>
+
+            <div class="pledge-header">
+                <h1>เจตจำนงสุจริตของผู้บริหาร</h1>
+                <h2>INTEGRITY PLEDGE OF MANAGEMENT</h2>
+                <p>วิทยาลัยอาชีวศึกษาอุดรธานี</p>
+            </div>
+
+            <div class="pledge-content">
+                <div class="pledge-intro">
+                    "ข้าพเจ้าขอแสดงเจตจำนงสุจริตในการบริหารงาน"
+                </div>
+
+                <p><strong>ข้าพเจ้า นางมนัสนันท์ ราตรีหว่าง</strong> ตำแหน่ง <strong>ผู้อำนวยการวิทยาลัยอาชีวศึกษาอุดรธานี</strong> ขอแสดงเจตจำนงสุจริตในการบริหารงานด้วยความซื่อสัตย์ โปร่งใส เป็นธรรม และยึดมั่นในหลักธรรมาภิบาล โดยให้คำมั่นสัญญาดังต่อไปนี้:</p>
+
+                <div class="principle-section">
+                    <h3>หลักการบริหารงานสุจริต</h3>
+                    
+                    <div class="principle-item">
+                        <h4>๑. ด้านความซื่อสัตย์สุจริต (Honesty & Integrity)</h4>
+                        <p>ข้าพเจ้าจะปฏิบัติหน้าที่ด้วยความซื่อสัตย์ ไม่แสวงหาผลประโยชน์ส่วนตน ไม่รับของขวัญ สินบน หรือประโยชน์ตอบแทนในรูปแบบใดๆ และจะใช้อำนาจหน้าที่เพื่อประโยชน์ส่วนรวมเท่านั้น</p>
+                    </div>
+
+                    <div class="principle-item">
+                        <h4>๒. ด้านความโปร่งใส (Transparency)</h4>
+                        <p>ข้าพเจ้าจะเปิดเผยข้อมูลการบริหารงานให้สาธารณชนสามารถตรวจสอบได้ ดำเนินการจัดซื้อจัดจ้างอย่างโปร่งใส เป็นธรรม และจะรับฟังความคิดเห็นจากผู้มีส่วนได้ส่วนเสียอย่างเปิดใจ</p>
+                    </div>
+
+                    <div class="principle-item">
+                        <h4>๓. ด้านความเป็นธรรม (Fairness)</h4>
+                        <p>ข้าพเจ้าจะปฏิบัติต่อบุคลากรและผู้รับบริการอย่างเท่าเทียม พิจารณาเรื่องต่างๆ ด้วยเหตุและผล ไม่มีอคติ และให้โอกาสทุกฝ่ายได้แสดงความคิดเห็นอย่างเป็นธรรม</p>
+                    </div>
+
+                    <div class="principle-item">
+                        <h4>๔. ด้านความรับผิดชอบ (Accountability)</h4>
+                        <p>ข้าพเจ้าจะรับผิดชอบต่อผลการปฏิบัติงานของตนเองและองค์กร จัดให้มีกลไกการติดตามประเมินผลและปรับปรุงงานอย่างต่อเนื่อง และจะแก้ไขปัญหาอย่างรวดเร็วและมีประสิทธิภาพ</p>
+                    </div>
+                </div>
+
+                <div class="oath-section">
+                    <h4>คำปฏิญาณ</h4>
+                    <div class="oath-text">
+                        "ข้าพเจ้าขอปฏิญาณตนว่าจะปฏิบัติหน้าที่ผู้บริหารด้วยความซื่อสัตย์สุจริต<br>
+                        จะไม่กระทำการใดๆ ที่เป็นการทุจริตหรือประพฤติมิชอบ<br>
+                        และจะส่งเสริมให้วิทยาลัยอาชีวศึกษาอุดรธานีเป็นองค์กรที่มีธรรมาภิบาล<br>
+                        เพื่อประโยชน์สุขของผู้เรียน บุคลากร และสังคมโดยรวม"
+                    </div>
+                </div>
+            </div>
+
+            <div class="pledge-signature">
+                <p style="margin-bottom: 40px; font-weight: 600; font-size: 1.2rem;">ลงนาม</p>
+                <div class="signature-line">
+                    <p class="signature-name">(นางมนัสนันท์ ราตรีหว่าง)</p>
+                </div>
+                <p class="signature-title">ผู้อำนวยการวิทยาลัยอาชีวศึกษาอุดรธานี</p>
+                <p class="signature-date">วันที่ 15 มิถุนายน พ.ศ. 2568</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

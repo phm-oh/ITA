@@ -1,0 +1,489 @@
+/* About Page Specific Styles */
+
+/* Organization Info Section */
+.org-info-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.org-overview {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.org-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #dc143c;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.org-logo-large {
+     width: 30%;
+    height: 30%;
+    object-fit: cover;
+    display: block;
+}
+
+.logo-circle-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+}
+
+.org-details-main h2 {
+    color: #dc143c;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.org-details-main h3 {
+    color: #666;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.org-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #333;
+    min-width: 80px;
+}
+
+.meta-value {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* About Contact Section */
+.about-contact-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.about-contact-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #dc143c;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.about-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #dc143c;
+}
+
+.contact-info-card h3 {
+    color: #dc143c;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-detail:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(220, 20, 60, 0.1);
+}
+
+.contact-detail .contact-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.contact-detail .contact-text strong {
+    color: #333;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact-detail .contact-text p {
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.contact-detail .contact-text a {
+    color: #dc143c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-detail .contact-text a:hover {
+    color: #8b0000;
+    text-decoration: underline;
+}
+
+.location-detail {
+    font-size: 0.9rem;
+    color: #888 !important;
+    margin-top: 0.3rem !important;
+}
+
+/* About Map Card */
+.about-map-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #dc143c;
+}
+
+.about-map-card h3 {
+    color: #dc143c;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.about-map-container {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.about-map-embed {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.about-map-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.map-action-btn {
+    background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.map-action-btn.secondary {
+    background: white;
+    color: #dc143c;
+    border: 2px solid #dc143c;
+}
+
+.map-action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+}
+
+.map-action-btn.secondary:hover {
+    background: #dc143c;
+    color: white;
+}
+
+/* Office Hours Section */
+.about-hours-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.about-hours-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #dc143c;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.hours-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+.hours-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border-left: 5px solid #dc143c;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hours-card h3 {
+    color: #dc143c;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.hours-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hour-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid #28a745;
+    transition: all 0.3s ease;
+}
+
+.hour-item.weekend {
+    border-left-color: #ffc107;
+}
+
+.hour-item.holiday {
+    border-left-color: #dc3545;
+}
+
+.hour-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hour-item .day {
+    font-weight: 600;
+    color: #333;
+}
+
+.hour-item .time {
+    color: #666;
+    font-weight: 500;
+}
+
+.hours-note {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #ffc107;
+}
+
+.hours-note h4 {
+    color: #dc143c;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.hours-note ul {
+    list-style: none;
+    padding: 0;
+}
+
+.hours-note li {
+    color: #666;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.hours-note li::before {
+    content: '💡';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Quick Actions Section */
+.quick-actions-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.quick-actions-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #dc143c;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.action-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #dc143c;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(220, 20, 60, 0.15);
+    color: inherit;
+    text-decoration: none;
+}
+
+.action-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.action-card h3 {
+    color: #dc143c;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.action-card p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Design for About Page */
+@media (max-width: 768px) {
+    .org-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .about-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-detail {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-map-actions {
+        flex-direction: column;
+    }
+
+    .hours-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .quick-actions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hour-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .org-card {
+        padding: 2rem;
+    }
+
+    .logo-circle-large {
+        width: 100px;
+        height: 100px;
+        font-size: 1.5rem;
+    }
+
+    .org-details-main h2 {
+        font-size: 1.8rem;
+    }
+
+    .org-details-main h3 {
+        font-size: 1.1rem;
+    }
+
+    .contact-info-card,
+    .about-map-card {
+        padding: 2rem;
+    }
+
+    .hours-card,
+    .hours-note {
+        padding: 2rem;
+    }
+
+    .about-map-embed iframe {
+        height: 250px;
+    }
+
+    .action-card {
+        padding: 1.5rem;
+    }
+
+    .meta-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+}
