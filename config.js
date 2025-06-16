@@ -23,9 +23,9 @@ const CONFIG = {
 
     // ข้อมูลการประเมิน ITA
     ASSESSMENT: {
-        CURRENT_YEAR: '2567',
-        CURRENT_YEAR_BE: '2567',
-        LAST_ASSESSED_YEAR: '2566', // ปีที่ถูกประเมินล่าสุด
+        CURRENT_YEAR: '2568',
+        CURRENT_YEAR_BE: '2568',
+        LAST_ASSESSED_YEAR: '2568', // ปีที่ถูกประเมินล่าสุด
         HAS_BEEN_ASSESSED: false, // เปลี่ยนเป็น true เมื่อมีการประเมินแล้ว
         
         // คะแนนการประเมิน (จะแสดงเมื่อ HAS_BEEN_ASSESSED = true)
