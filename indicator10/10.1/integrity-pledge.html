@@ -1,14 +1,9 @@
-<!-- 
-ไฟล์: integrity-pledge.html
-Path: indicator10/10.1/integrity-pledge.html
-ตัวชี้วัดที่ 10.1 การดำเนินการเพื่อป้องกันการทุจริต - ข้อ 34
--->
 <!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เจตจำนงสุจริตของผู้บริหาร - วิทยาลัยอาชีวศึกษาอุดรธานี</title>
+    <title>นโยบาย No Gift Policy - วิทยาลัยอาชีวศึกษาอุดรธานี</title>
     <style>
         * {
             margin: 0;
@@ -40,6 +35,7 @@ Path: indicator10/10.1/integrity-pledge.html
             text-decoration: none;
             transition: all 0.3s ease;
             margin-bottom: 20px;
+            font-size: 1rem;
         }
 
         .back-link:hover {
@@ -56,19 +52,31 @@ Path: indicator10/10.1/integrity-pledge.html
             border-left: 4px solid #dc2626;
             color: #666;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            font-size: 1rem;
         }
 
-        .pledge-document {
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 15px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 3px solid #dc2626;
+        }
+
+        .policy-document {
             background: white;
             border: 3px solid #dc2626;
             border-radius: 20px;
-            padding: 50px;
+            padding: 30px;
             margin: 30px 0;
             box-shadow: 0 15px 40px rgba(0,0,0,0.1);
             position: relative;
         }
 
-        .pledge-document::before {
+        .policy-document::before {
             content: '';
             position: absolute;
             top: -3px;
@@ -80,58 +88,70 @@ Path: indicator10/10.1/integrity-pledge.html
             z-index: -1;
         }
 
-        .pledge-header {
+        .policy-header {
             text-align: center;
             border-bottom: 3px double #dc2626;
-            padding-bottom: 25px;
-            margin-bottom: 40px;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
 
-        .pledge-header h1 {
+        .policy-header h1 {
             color: #dc2626;
-            font-size: 2.4rem;
-            margin-bottom: 10px;
+            font-size: 2rem;
+            margin-bottom: 8px;
             font-weight: 700;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            line-height: 1.3;
         }
 
-        .pledge-header h2 {
+        .policy-header h2 {
             color: #666;
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             font-weight: 500;
             font-style: italic;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            line-height: 1.4;
         }
 
-        .pledge-header p {
+        .policy-header p {
             color: #666;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
-        .pledge-content {
-            line-height: 2.2;
+        .policy-content {
+            line-height: 1.8;
             text-align: justify;
             color: #333;
             font-size: 1.05rem;
         }
 
-        .pledge-intro {
+        .policy-content p {
+            margin-bottom: 15px;
+            text-indent: 2em;
+        }
+
+        .policy-content p.no-indent {
+            text-indent: 0;
+        }
+
+        .policy-intro {
             text-align: center;
-            font-size: 1.3rem;
-            margin-bottom: 30px;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
             color: #dc2626;
             font-weight: 600;
             background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
             padding: 20px;
             border-radius: 12px;
             border-left: 5px solid #dc2626;
+            line-height: 1.8;
         }
 
         .principle-section {
             background: linear-gradient(135deg, #fef2f2 0%, #fff5f5 100%);
-            padding: 30px;
+            padding: 25px;
             border-radius: 15px;
-            margin: 30px 0;
+            margin: 25px 0;
             border-left: 5px solid #dc2626;
             box-shadow: 0 5px 15px rgba(220, 38, 38, 0.1);
         }
@@ -140,72 +160,116 @@ Path: indicator10/10.1/integrity-pledge.html
             text-align: center;
             color: #dc2626;
             border-bottom: 2px solid #dc2626;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-            font-size: 1.4rem;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
+
+        .principle-list {
+            list-style: none;
+            counter-reset: principle-counter;
         }
 
         .principle-item {
-            margin: 25px 0;
+            margin: 20px 0;
             padding: 20px;
             background: white;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            counter-increment: principle-counter;
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .principle-item::before {
+            content: counter(principle-counter);
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background: #dc2626;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1rem;
         }
 
         .principle-item h4 {
             color: #dc2626;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-size: 1.1rem;
-            border-bottom: 1px solid #fee2e2;
-            padding-bottom: 8px;
+            line-height: 1.4;
         }
 
         .principle-item p {
             margin-bottom: 10px;
-            text-indent: 2em;
+            text-indent: 0;
+            line-height: 1.8;
         }
 
-        .oath-section {
+        .no-gift-highlight {
             background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
-            padding: 30px;
+            padding: 25px;
             border-radius: 15px;
             text-align: center;
-            margin: 30px 0;
+            margin: 25px 0;
             border: 2px solid #dc2626;
             box-shadow: 0 10px 25px rgba(220, 38, 38, 0.2);
         }
 
-        .oath-section h4 {
+        .no-gift-highlight h4 {
             color: #dc2626;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+            line-height: 1.4;
         }
 
-        .oath-text {
+        .no-gift-text {
             font-style: italic;
-            font-size: 1.15rem;
-            line-height: 2.2;
+            font-size: 1.2rem;
+            line-height: 1.8;
             color: #333;
-            font-weight: 500;
+            font-weight: 600;
         }
 
-        .pledge-signature {
+        .policy-signature {
             text-align: center;
-            margin-top: 50px;
-            padding-top: 30px;
+            margin-top: 40px;
+            padding-top: 25px;
             border-top: 3px solid #dc2626;
         }
 
-        .pledge-signature p {
-            margin: 15px 0;
+        .policy-signature p {
+            margin: 10px 0;
             font-size: 1.1rem;
+        }
+
+        .signature-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 25px auto;
+            max-width: 400px;
+        }
+
+        .signature-image {
+            width: 200px;
+            height: 80px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            object-fit: contain;
+            background: transparent;
         }
 
         .signature-line {
             border-bottom: 2px solid #333;
             width: 350px;
-            margin: 25px auto;
+            margin: 10px auto;
             padding-bottom: 8px;
             position: relative;
         }
@@ -214,58 +278,244 @@ Path: indicator10/10.1/integrity-pledge.html
             font-weight: 700;
             font-size: 1.2rem;
             color: #dc2626;
+            margin-top: 10px;
         }
 
         .signature-title {
             font-weight: 600;
             color: #666;
+            margin-top: 5px;
         }
 
         .signature-date {
             font-style: italic;
             color: #666;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
         .official-seal {
             position: absolute;
             top: 20px;
             right: 20px;
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             border: 3px solid #dc2626;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             background: white;
-            font-size: 0.8rem;
-            color: #dc2626;
-            text-align: center;
-            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        #org-logo-large{
-            width: 150%;
+        .official-seal img {
+            width: 120%;
             height: auto;
             border-radius: 50%;
         }
 
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .pledge-document {
-                padding: 30px 20px;
-            }
-            
-            .pledge-header h1 {
-                font-size: 2rem;
-            }
-            
             .container {
                 padding: 15px;
             }
 
+            .policy-document {
+                padding: 20px 15px;
+                margin: 20px 0;
+            }
+            
+            .policy-header h1 {
+                font-size: 1.6rem;
+                line-height: 1.3;
+            }
+
+            .policy-header h2 {
+                font-size: 1rem;
+                line-height: 1.4;
+            }
+
+            .policy-header p {
+                font-size: 1rem;
+            }
+
+            .policy-content {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+
+            .policy-content p {
+                margin-bottom: 12px;
+                text-indent: 1.5em;
+            }
+
+            .policy-intro {
+                font-size: 1.1rem;
+                padding: 15px;
+                line-height: 1.7;
+            }
+
+            .principle-section {
+                padding: 20px 15px;
+            }
+
+            .principle-section h3 {
+                font-size: 1.2rem;
+                line-height: 1.4;
+            }
+
+            .principle-item {
+                padding: 15px;
+                padding-left: 50px;
+                margin: 12px 0;
+            }
+
+            .principle-item::before {
+                width: 25px;
+                height: 25px;
+                font-size: 0.9rem;
+                left: 15px;
+                top: 15px;
+            }
+
+            .principle-item h4 {
+                font-size: 1rem;
+                line-height: 1.4;
+                margin-bottom: 8px;
+            }
+
+            .principle-item p {
+                line-height: 1.7;
+                font-size: 0.95rem;
+                margin-bottom: 8px;
+            }
+
+            .no-gift-highlight {
+                padding: 20px 15px;
+            }
+
+            .no-gift-highlight h4 {
+                font-size: 1.2rem;
+                line-height: 1.4;
+            }
+
+            .no-gift-text {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                word-break: keep-all;
+                overflow-wrap: break-word;
+            }
+
+            .signature-container {
+                max-width: 100%;
+            }
+
+            .signature-image {
+                width: 180px;
+                height: 70px;
+            }
+
+            .signature-line {
+                width: 280px;
+            }
+
+            .signature-name {
+                font-size: 1.1rem;
+            }
+
+            .signature-title {
+                font-size: 1rem;
+            }
+
+            .signature-date {
+                font-size: 1rem;
+                margin-top: 12px;
+            }
+
             .official-seal {
                 display: none;
+            }
+
+            .back-link {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+
+            .breadcrumb {
+                font-size: 0.9rem;
+                padding: 12px 20px;
+            }
+
+            .hero-image {
+                margin: 15px auto;
+                border-radius: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .policy-header h1 {
+                font-size: 1.4rem;
+            }
+
+            .policy-header h2 {
+                font-size: 0.95rem;
+            }
+
+            .principle-item {
+                padding: 12px;
+                padding-left: 45px;
+                margin: 10px 0;
+            }
+
+            .principle-item::before {
+                width: 22px;
+                height: 22px;
+                font-size: 0.8rem;
+                left: 12px;
+                top: 12px;
+            }
+
+            .signature-line {
+                width: 250px;
+            }
+
+            .signature-image {
+                width: 160px;
+                height: 60px;
+                margin-bottom: 8px;
+            }
+
+            .signature-date {
+                margin-top: 10px;
+            }
+
+            .no-gift-text {
+                font-size: 0.75rem;
+                line-height: 1.5;
+            }
+
+            .no-gift-highlight h4 {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .no-gift-text {
+                font-size: 0.6rem;
+                line-height: 1.4;
+            }
+
+            .no-gift-highlight {
+                padding: 15px 10px;
+            }
+
+            .no-gift-highlight h4 {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+
+            .signature-line {
+                margin: 6px auto;
             }
         }
     </style>
@@ -274,74 +524,96 @@ Path: indicator10/10.1/integrity-pledge.html
     <div class="container">
         <a href="../../data-disclosure.html" class="back-link">← กลับสู่หน้าเปิดเผยข้อมูล</a>
         
-        <div class="breadcrumb">
-            📍 ตัวชี้วัดที่ 10.1 การดำเนินการเพื่อป้องกันการทุจริต → ข้อ 34 เจตจำนงสุจริตของผู้บริหาร
-        </div>
+        <!-- <div class="breadcrumb">
+            📍 ตัวชี้วัดที่ 10.1 การดำเนินการเพื่อป้องกันการทุจริต → ข้อ 34 นโยบาย No Gift Policy
+        </div> -->
 
-        <div class="pledge-document">
+        <img src="https://www.udvc.ac.th/wp-content/uploads/2024/01/416366851_764752515687720_3567431101495580154_n-768x773.jpg" alt="วิทยาลัยอาชีวศึกษาอุดรธานี - No Gift Policy" class="hero-image">
+
+        <div class="policy-document">
             <div class="official-seal">
-                <!-- ตราสัญลักษณ์<br>
-                วิทยาลัย<br>
-                อาชีวศึกษา<br>
-                อุดรธานี -->
-                 <img src="https://res.cloudinary.com/dzysz9ib8/image/upload/v1748184300/Udvc.imp_gork69.png" alt="Logo" id="org-logo-large">
+                <img src="https://res.cloudinary.com/dzysz9ib8/image/upload/v1748184300/Udvc.imp_gork69.png" alt="Logo">
             </div>
 
-            <div class="pledge-header">
-                <h1>เจตจำนงสุจริตของผู้บริหาร</h1>
-                <h2>INTEGRITY PLEDGE OF MANAGEMENT</h2>
+            <div class="policy-header">
+                <h1>นโยบายการไม่รับของขวัญและของกำนัล</h1>
+                <h2>NO GIFT POLICY</h2>
                 <p>วิทยาลัยอาชีวศึกษาอุดรธานี</p>
             </div>
 
-            <div class="pledge-content">
-                <div class="pledge-intro">
-                    "ข้าพเจ้าขอแสดงเจตจำนงสุจริตในการบริหารงาน"
+            <div class="policy-content">
+                <div class="policy-intro">
+                    "วิทยาลัยอาชีวศึกษาอุดรธานี มุ่งมั่นสร้างองค์กรที่โปร่งใส ปลอดการทุจริต<br>
+                    ด้วยนโยบายไม่รับ-ไม่ให้ของขวัญและของกำนัลทุกชนิด"
                 </div>
 
-                <p><strong>ข้าพเจ้า นางมนัสนันท์ ราตรีหว่าง</strong> ตำแหน่ง <strong>ผู้อำนวยการวิทยาลัยอาชีวศึกษาอุดรธานี</strong> ขอแสดงเจตจำนงสุจริตในการบริหารงานด้วยความซื่อสัตย์ โปร่งใส เป็นธรรม และยึดมั่นในหลักธรรมาภิบาล โดยให้คำมั่นสัญญาดังต่อไปนี้:</p>
+                <p>ตามแผนปฏิรูปด้านการป้องกันและปราบปรามการทุจริตและประพฤติมิชอบ (ฉบับปรับปรุง) กำหนดกิจกรรมปฏิรูปที่สำคัญ (Big Rock) 4 ว่าด้วยการพัฒนาระบบราชการไทยให้โปร่งใส ไร้ผลประโยชน์</p>
+
+                <p>โดยมีเป้าหมายให้หน่วยงานของรัฐทุกหน่วยงานประกาศตนเป็นหน่วยงานที่เจ้าหน้าที่ของรัฐทุกคนไม่รับของขวัญและของกำนัลทุกชนิดจากการปฏิบัติหน้าที่</p>
+
+                <p class="no-indent"><strong>วิทยาลัยอาชีวศึกษาอุดรธานี</strong> ตระหนักถึงความสำคัญและสนับสนุนการดำเนินงานตามนโยบายของรัฐบาล</p>
+
+                <p>เพื่อเป็นการแสดงเจตนารมณ์ในการต่อต้านการทุจริตทุกรูปแบบ และเสริมสร้างความโปร่งใสภายในองค์กร จึงได้กำหนดนโยบายดังต่อไปนี้:</p>
 
                 <div class="principle-section">
-                    <h3>หลักการบริหารงานสุจริต</h3>
+                    <h3>หลักการและแนวทางปฏิบัติ</h3>
                     
-                    <div class="principle-item">
-                        <h4>๑. ด้านความซื่อสัตย์สุจริต (Honesty & Integrity)</h4>
-                        <p>ข้าพเจ้าจะปฏิบัติหน้าที่ด้วยความซื่อสัตย์ ไม่แสวงหาผลประโยชน์ส่วนตน ไม่รับของขวัญ สินบน หรือประโยชน์ตอบแทนในรูปแบบใดๆ และจะใช้อำนาจหน้าที่เพื่อประโยชน์ส่วนรวมเท่านั้น</p>
-                    </div>
+                    <ol class="principle-list">
+                        <li class="principle-item">
+                            <h4>การไม่รับของขวัญและของกำนัล</h4>
+                            <p>ผู้บริหาร บุคลากร และเจ้าหน้าที่ทุกคนของวิทยาลัยฯ จะไม่รับของขวัญ ของกำนัล หรือผลประโยชน์ใดๆ จากการปฏิบัติหน้าที่ ไม่ว่าก่อน ขณะ หรือหลังการปฏิบัติหน้าที่</p>
+                        </li>
 
-                    <div class="principle-item">
-                        <h4>๒. ด้านความโปร่งใส (Transparency)</h4>
-                        <p>ข้าพเจ้าจะเปิดเผยข้อมูลการบริหารงานให้สาธารณชนสามารถตรวจสอบได้ ดำเนินการจัดซื้อจัดจ้างอย่างโปร่งใส เป็นธรรม และจะรับฟังความคิดเห็นจากผู้มีส่วนได้ส่วนเสียอย่างเปิดใจ</p>
-                    </div>
+                        <li class="principle-item">
+                            <h4>การไม่ให้ของขวัญและของกำนัล</h4>
+                            <p>ห้ามไม่ให้บุคลากรของวิทยาลัยฯ มอบของขวัญ ของกำนัล หรือผลประโยชน์ใดๆ ให้แก่บุคคลภายนอกเพื่อแสวงหาประโยชน์หรือสร้างความสัมพันธ์ที่ไม่เหมาะสม</p>
+                        </li>
 
-                    <div class="principle-item">
-                        <h4>๓. ด้านความเป็นธรรม (Fairness)</h4>
-                        <p>ข้าพเจ้าจะปฏิบัติต่อบุคลากรและผู้รับบริการอย่างเท่าเทียม พิจารณาเรื่องต่างๆ ด้วยเหตุและผล ไม่มีอคติ และให้โอกาสทุกฝ่ายได้แสดงความคิดเห็นอย่างเป็นธรรม</p>
-                    </div>
+                        <li class="principle-item">
+                            <h4>การสร้างวัฒนธรรมองค์กร</h4>
+                            <p>ส่งเสริมให้เกิดวัฒนธรรมการทำงานที่ยึดมั่นในความซื่อสัตย์ สุจริต โปร่งใส และเป็นธรรม โดยให้ความสำคัญกับการปฏิบัติหน้าที่เพื่อประโยชน์ส่วนรวม</p>
+                        </li>
 
-                    <div class="principle-item">
-                        <h4>๔. ด้านความรับผิดชอบ (Accountability)</h4>
-                        <p>ข้าพเจ้าจะรับผิดชอบต่อผลการปฏิบัติงานของตนเองและองค์กร จัดให้มีกลไกการติดตามประเมินผลและปรับปรุงงานอย่างต่อเนื่อง และจะแก้ไขปัญหาอย่างรวดเร็วและมีประสิทธิภาพ</p>
-                    </div>
+                        <li class="principle-item">
+                            <h4>การติดตามและประเมินผล</h4>
+                            <p>จัดให้มีระบบการติดตาม ประเมินผล และรายงานการปฏิบัติตามนโยบายอย่างต่อเนื่อง รวมทั้งมีมาตรการในการจัดการกับผู้ที่ฝ่าฝืนนโยบาย</p>
+                        </li>
+
+                        <li class="principle-item">
+                            <h4>การสื่อสารและประชาสัมพันธ์</h4>
+                            <p>เผยแพร่และสื่อสารนโยบายให้บุคลากรทุกคน ผู้รับบริการ และผู้มีส่วนได้ส่วนเสียได้รับทราบและเข้าใจอย่างชัดเจน</p>
+                        </li>
+
+                        <li class="principle-item">
+                            <h4>การให้ความร่วมมือ</h4>
+                            <p>ขอความร่วมมือจากผู้รับบริการ ผู้ติดต่อราชการ และบุคคลภายนอกในการไม่เสนอหรือมอบของขวัญ ของกำนัล หรือผลประโยชน์ใดๆ ให้แก่บุคลากรของวิทยาลัยฯ</p>
+                        </li>
+                    </ol>
                 </div>
 
-                <div class="oath-section">
-                    <h4>คำปฏิญาณ</h4>
-                    <div class="oath-text">
-                        "ข้าพเจ้าขอปฏิญาณตนว่าจะปฏิบัติหน้าที่ผู้บริหารด้วยความซื่อสัตย์สุจริต<br>
-                        จะไม่กระทำการใดๆ ที่เป็นการทุจริตหรือประพฤติมิชอบ<br>
-                        และจะส่งเสริมให้วิทยาลัยอาชีวศึกษาอุดรธานีเป็นองค์กรที่มีธรรมาภิบาล<br>
-                        เพื่อประโยชน์สุขของผู้เรียน บุคลากร และสังคมโดยรวม"
+                <div class="no-gift-highlight">
+                    <h4>คำมั่นสัญญา NO GIFT POLICY</h4>
+                    <div class="no-gift-text">
+                        "วิทยาลัยอาชีวศึกษาอุดรธานี มุ่งมั่นที่จะปฏิบัติตามนโยบาย<br>
+                        'ไม่รับ - ไม่ให้' ของขวัญและของกำนัลทุกชนิด<br>
+                        เพื่อสร้างความโปร่งใสและความเป็นธรรม<br>
+                        ในการให้บริการแก่สังคมและประชาชน<br>
+                        อย่างยั่งยืนและต่อเนื่อง"
                     </div>
                 </div>
             </div>
 
-            <div class="pledge-signature">
-                <p style="margin-bottom: 40px; font-weight: 600; font-size: 1.2rem;">ลงนาม</p>
-                <div class="signature-line">
-                    <p class="signature-name">(นางมนัสนันท์ ราตรีหว่าง)</p>
+            <div class="policy-signature">
+                <p style="margin-bottom: 25px; font-weight: 600; font-size: 1.2rem;">ประกาศใช้โดย</p>
+                
+                <div class="signature-container">
+                    <img class="signature-image" src="" alt="ลายเซ็นผู้อำนวยการ">
+                    <div class="signature-line">
+                        <p class="signature-name">(นางมนัสนันท์ ราตรีหว่าง)</p>
+                    </div>
+                    <p class="signature-title">ผู้อำนวยการวิทยาลัยอาชีวศึกษาอุดรธานี</p>
+                    <p class="signature-date">วันที่ 11 มกราคม พ.ศ. 2567</p>
                 </div>
-                <p class="signature-title">ผู้อำนวยการวิทยาลัยอาชีวศึกษาอุดรธานี</p>
-                <p class="signature-date">วันที่ 15 มิถุนายน พ.ศ. 2568</p>
             </div>
         </div>
     </div>
