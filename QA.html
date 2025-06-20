@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A - วิทยาลัยอาชีวศึกษาอุดรธานี</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sarabun', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 3rem 0;
+        }
+
+        /* Ask Question Section */
+        .ask-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.1);
+            border: 2px solid rgba(220, 20, 60, 0.1);
+        }
+
+        .ask-section h2 {
+            color: #dc143c;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .ask-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #dc143c;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .ask-btn {
+            background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .ask-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(220, 20, 60, 0.3);
+        }
+
+        /* Success Message */
+        .success-message {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            text-align: center;
+            display: none;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.1);
+            border: 2px solid rgba(220, 20, 60, 0.1);
+        }
+
+        .faq-section h2 {
+            color: #dc143c;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e9ecef;
+            padding: 1.5rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            color: #dc143c;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .faq-answer {
+            color: #666;
+            line-height: 1.8;
+            padding-left: 1.5rem;
+            display: none;
+        }
+
+        .faq-answer.show {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .faq-icon {
+            color: #dc143c;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(90deg);
+        }
+
+        .faq-date {
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            color: #dc143c;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .ask-section,
+            .faq-section {
+                padding: 1.5rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>💬 ถาม-ตอบ Q&A</h1>
+            <p>วิทยาลัยอาชีวศึกษาอุดรธานี</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Ask Question Section -->
+            <section class="ask-section">
+                <h2>🙋‍♂️ ถามคำถาม</h2>
+                <p style="margin-bottom: 1.5rem; color: #666;">สอบถามข้อมูลต่างๆ เกี่ยวกับสถานศึกษา เราจะตอบกลับโดยเร็วที่สุด</p>
+                
+                <form class="ask-form" id="questionForm">
+                    <div class="form-group">
+                        <label for="name">ชื่อ-นามสกุล *</label>
+                        <input type="text" id="name" name="name" required placeholder="กรุณาใส่ชื่อ-นามสกุล">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">อีเมล *</label>
+                        <input type="email" id="email" name="email" required placeholder="example@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">เบอร์โทรศัพท์</label>
+                        <input type="tel" id="phone" name="phone" placeholder="08X-XXX-XXXX">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category">หมวดหมู่คำถาม</label>
+                        <select id="category" name="category" style="padding: 1rem; border: 2px solid #e9ecef; border-radius: 10px;">
+                            <option value="general">ข้อมูลทั่วไป</option>
+                            <option value="admission">การสมัครเรียน</option>
+                            <option value="course">หลักสูตร</option>
+                            <option value="facility">สิ่งอำนวยความสะดวก</option>
+                            <option value="other">อื่นๆ</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="question">คำถาม *</label>
+                        <textarea id="question" name="question" required placeholder="โปรดระบุคำถามของท่านโดยละเอียด..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="ask-btn">📨 ส่งคำถาม</button>
+                    
+                    <div id="successMessage" class="success-message">
+                        ✅ ส่งคำถามเรียบร้อยแล้ว! เราจะตอบกลับภายใน 1-2 วันทำการ
+                    </div>
+                </form>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <h2>❓ คำถามที่พบบ่อย (FAQ)</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-icon">▶</span>
+                        <span>Q: การสมัครเรียนต้องทำอย่างไร?</span>
+                    </div>
+                    <div class="faq-answer">
+                        A: สามารถเข้าดูการรับสมัครนักเรียนได้ที่ https://www.udvc.ac.th/ หรือมาสมัครด้วยตนเองที่สถานศึกษา โดยต้องเตรียมเอกสาร ได้แก่ สำเนาทะเบียนบ้าน สำเนาบัตรประชาชน และใบรับรองการศึกษา
+                    </div>
+                    <div class="faq-date">ตอบเมื่อ: 15 ธันวาคม 2567</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-icon">▶</span>
+                        <span>Q: มีหลักสูตรอะไรบ้าง?</span>
+                    </div>
+                    <div class="faq-answer">
+                        A: เรามีหลักสูตรหลากหลายสาขา เช่น เทคโนโลยีสารสนเทศ,ธุรกิจดิจิทัล , การบัญชี, การตลาด, อาหารและโภชนา, โลจิสติกส์, การท่องเที่ยว และอื่นๆ สามารถดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์หลัก
+                    </div>
+                    <div class="faq-date">ตอบเมื่อ: 12 ธันวาคม 2567</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-icon">▶</span>
+                        <span>Q: ค่าเล่าเรียนเท่าไหร่?</span>
+                    </div>
+                    <div class="faq-answer">
+                        A: ค่าเล่าเรียนจะแตกต่างกันตามหลักสูตร โดยเฉลี่ยประมาณ 3,000-5,000 บาทต่อภาคเรียน มีระบบทุนการศึกษา กยศ สำหรับนักเรียนที่มีความต้องการ
+                    </div>
+                    <div class="faq-date">ตอบเมื่อ: 10 ธันวาคม 2567</div>
+                </div>
+
+             
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span class="faq-icon">▶</span>
+                        <span>Q: การฝึกงานเป็นอย่างไร?</span>
+                    </div>
+                    <div class="faq-answer">
+                        A: เรามีเครือข่ายสถานประกอบการหลากหลายทั้งในจังหวัดและต่างจังหวัด และสถานประกอบการที่นักเรียนสามารถติดต่อประสานงานได้ด้วยตัวเอง ตามสายงานวิชาชีพที่เรียน นักเรียนจะฝึกงานในปีการศึกษาสุดท้าย เป็นเวลา 4 เดือน มีครูนิเทศติดตามอย่างใกล้ชิด
+                    </div>
+                    <div class="faq-date">ตอบเมื่อ: 5 ธันวาคม 2567</div>
+                </div>
+            </section>
+
+            <!-- Contact Info -->
+            <section class="contact-info">
+                <h3>📞 ช่องทางการติดต่ออื่นๆ</h3>
+                <div class="contact-item">
+                    <strong>โทรศัพท์:</strong> 042-246-690
+                </div>
+                <div class="contact-item">
+                    <strong>อีเมล:</strong> udvc@udvc.ac.th
+                </div>
+                <div class="contact-item">
+                    <strong>Facebook:</strong> <a href="https://www.facebook.com/UDVCrcheewaudon" target="_blank">วิทยาลัยอาชีวศึกษาอุดรธานี</a>
+                </div>
+                <div class="contact-item">
+                    <strong>เวลาทำการ:</strong> จันทร์-ศุกร์ 8:00-16:30 น.
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script>
+        // Form submission
+        document.getElementById('questionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                category: document.getElementById('category').value,
+                question: document.getElementById('question').value,
+                timestamp: new Date().toLocaleString('th-TH')
+            };
+            
+            // Create email content
+            const emailBody = `
+คำถามใหม่จากเว็บไซต์ Q&A
+
+ชื่อ: ${formData.name}
+อีเมล: ${formData.email}
+เบอร์โทร: ${formData.phone || 'ไม่ระบุ'}
+หมวดหมู่: ${formData.category}
+เวลา: ${formData.timestamp}
+
+คำถาม:
+${formData.question}
+
+---
+กรุณาตอบกลับทาง email: ${formData.email}
+และเพิ่มคำตอบใน FAQ section ของเว็บไซต์
+            `.trim();
+            
+            // Option 1: ใช้ mailto (ง่ายที่สุด)
+            const mailtoLink = `mailto:udvc@udvc.ac.th?subject=Q&A - คำถามจาก ${formData.name}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Option 2: ส่งผ่าน form submission service (เช่น Formspree, EmailJS)
+            // sendToEmailService(formData);
+            
+            // Show options to user
+            if (confirm('เลือกวิธีส่งคำถาม:\n\nกด OK = เปิดอีเมลโปรแกรม\nกด Cancel = ส่งผ่านระบบออนไลน์')) {
+                // Open email client
+                window.location.href = mailtoLink;
+            } else {
+                // Send via online service (need to implement)
+                sendViaEmailService(formData);
+            }
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        });
+
+        // Function to send via email service (implement with EmailJS or similar)
+        function sendViaEmailService(formData) {
+            // Example with EmailJS (need to set up account first)
+            /*
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+                from_name: formData.name,
+                from_email: formData.email,
+                phone: formData.phone,
+                category: formData.category,
+                message: formData.question,
+                to_email: 'udvc@udvc.ac.th'
+            }).then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+            }, function(error) {
+                console.log('FAILED...', error);
+                // Fallback to mailto
+                alert('ส่งไม่สำเร็จ กรุณาลองใหม่หรือติดต่อโทรศัพท์');
+            });
+            */
+            
+            // For now, just log and show message
+            console.log('Would send email with:', formData);
+            alert('ระบบกำลังส่งคำถามของท่าน...\nเราจะตอบกลับภายใน 1-2 วันทำการ');
+        }
+
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = element.querySelector('.faq-icon');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('open');
+                    item.querySelector('.faq-answer').classList.remove('show');
+                }
+            });
+            
+            // Toggle current FAQ item
+            faqItem.classList.toggle('open');
+            answer.classList.toggle('show');
+        }
+
+        // Smooth scroll for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
