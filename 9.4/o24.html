@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หลักเกณฑ์การบริหารและพัฒนาทรัพยากรบุคคล - วิทยาลัยอาชีวศึกษาอุดรธานี</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.1);
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .title-section h1 {
+            color: #2d3748;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .title-section p {
+            color: #718096;
+            font-size: 14px;
+        }
+
+        .year-badge {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 20px 0 40px;
+        }
+
+        .page-hero {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 8px 32px rgba(220, 38, 38, 0.3);
+        }
+
+        .page-hero h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-hero p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* HR Categories */
+        .hr-categories {
+            display: grid;
+            gap: 30px;
+        }
+
+        .hr-category {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(220, 38, 38, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hr-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(220, 38, 38, 0.1);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .category-icon {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .category-header h3 {
+            color: #2d3748;
+            font-size: 22px;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .category-description {
+            color: #4a5568;
+            font-size: 16px;
+            margin-bottom: 25px;
+            line-height: 1.7;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 10px;
+            border-left: 4px solid #dc2626;
+        }
+
+        /* Document Grid */
+        .document-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .document-item {
+            background: linear-gradient(135deg, #f8fafc, #ffffff);
+            border: 1px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .document-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .document-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-color: #dc2626;
+        }
+
+        .document-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .document-title {
+            color: #2d3748;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .document-meta {
+            color: #718096;
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .document-type {
+            background: #e2e8f0;
+            color: #4a5568;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .document-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .document-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+            background: linear-gradient(135deg, #b91c1c, #991b1b);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #718096;
+        }
+
+        .empty-state .icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            color: #dc2626;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #dc2626;
+        }
+
+        .back-button:hover {
+            background: #dc2626;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                text-align: center;
+            }
+
+            .page-hero h1 {
+                font-size: 24px;
+            }
+
+            .page-hero p {
+                font-size: 16px;
+            }
+
+            .hr-category {
+                padding: 20px;
+            }
+
+            .category-header h3 {
+                font-size: 18px;
+            }
+
+            .document-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .back-button {
+                position: relative;
+                margin: 0 auto 20px;
+                display: inline-flex;
+                background: white;
+                color: #dc2626;
+                border: 1px solid #dc2626;
+            }
+
+            .back-button:hover {
+                background: #dc2626;
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="data-disclosure.html" class="back-button">
+        ← กลับสู่หน้าหลัก
+    </a>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">HR</div>
+                    <div class="title-section">
+                        <h1>หลักเกณฑ์การบริหารและพัฒนาทรัพยากรบุคคล</h1>
+                        <p>Human Resource Management Guidelines</p>
+                    </div>
+                </div>
+                <div class="year-badge">
+                    <span>ปีงบประมาณ 2568</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Hero -->
+            <section class="page-hero">
+                <h1>หลักเกณฑ์การบริหารและพัฒนาทรัพยากรบุคคล</h1>
+                <p>วิทยาลัยอาชีวศึกษาอุดรธานี</p>
+            </section>
+
+            <!-- HR Categories -->
+            <div class="hr-categories">
+                <!-- 1. การสรรหาและคัดเลือกบุคลากร -->
+                <div class="hr-category">
+                    <div class="category-header">
+                        <div class="category-icon">1</div>
+                        <h3>การสรรหาและคัดเลือกบุคลากร</h3>
+                    </div>
+                    <div class="category-description">
+                        การดำเนินการสรรหาและคัดเลือกบุคลากรของสถานศึกษา รวมถึงการรับสมัครพนักงานราชการ ครูพิเศษสอน และเจ้าหน้าที่ต่างๆ ตามหลักเกณฑ์และขั้นตอนที่กำหนด
+                    </div>
+                    <div class="document-grid">
+                        <div class="document-item">
+                            <div class="document-title">คู่มือการดำเนินการสรรหาและเลือกสรรพนักงานราชการทั่วไป</div>
+                            <div class="document-meta">
+                                <span class="document-type">คู่มือ</span>
+                                <span>•</span>
+                                <span>แนวทางการปฏิบัติ</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1GjQH-BYHyb37KWWj9P-N4FJYvDsasC20/view?usp=sharing" class="document-link" target="_blank">
+                                📚 ดูคู่มือ
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">การสรรหาพนักงานราชการ การจัดการ การบิน</div>
+                            <div class="document-meta">
+                                <span class="document-type">เอกสาร</span>
+                                <span>•</span>
+                                <span>การสรรหา</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1vnmXMuRNd0odwUj9Rvq7juXLt6bIaJvx/view?usp=sharing" class="document-link" target="_blank">
+                                📄 ดูเอกสาร
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">การรับสมัครพนักงานราชการ ครู โลจิสติกส์</div>
+                            <div class="document-meta">
+                                <span class="document-type">ประกาศ</span>
+                                <span>•</span>
+                                <span>รับสมัคร</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1Qo2RVN4kcrOmmHษn7-NKzBESohsgjsIpB/view?usp=sharing" class="document-link" target="_blank">
+                                📢 ดูประกาศ
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">การรับสมัครครูพิเศษ เจ้าหน้าที่ 2567 (ครั้งที่ 1)</div>
+                            <div class="document-meta">
+                                <span class="document-type">ประกาศ</span>
+                                <span>•</span>
+                                <span>รับสมัคร</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1y4t1FhLtpuw1fxIt-_7KLXckIcLfw0hI/view?usp=sharing" class="document-link" target="_blank">
+                                📢 ดูประกาศ
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">การรับสมัครครูพิเศษ เจ้าหน้าที่ 2567 (ครั้งที่ 2)</div>
+                            <div class="document-meta">
+                                <span class="document-type">ประกาศ</span>
+                                <span>•</span>
+                                <span>รับสมัคร</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1-Y4ddm6WXw3WCjRO9EER962_IRhAj7hV/view?usp=sharing" class="document-link" target="_blank">
+                                📢 ดูประกาศ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. การบรรจุและการแต่งตั้งบุคลากร -->
+                <div class="hr-category">
+                    <div class="category-header">
+                        <div class="category-icon">2</div>
+                        <h3>การบรรจุและการแต่งตั้งบุคลากร</h3>
+                    </div>
+                    <div class="category-description">
+                        การบรรจุและแต่งตั้งพนักงานราชการ ครูพิเศษสอน เจ้าหน้าที่ รวมถึงการต่อสัญญาและการแต่งตั้งในตำแหน่งต่างๆ ตามระเบียบที่เกี่ยวข้อง
+                    </div>
+                    <div class="document-grid">
+                        <div class="document-item">
+                            <div class="document-title">สัญญาจ้างพนักงานราชการ</div>
+                            <div class="document-meta">
+                                <span class="document-type">สัญญา</span>
+                                <span>•</span>
+                                <span>การจ้างงาน</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1M6SbxtFq26gyQiDFKAQ8huSZRlO-oRCh/view?usp=sharing" class="document-link" target="_blank">
+                                📋 ดูสัญญา
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. การพัฒนาบุคลากร -->
+                <div class="hr-category">
+                    <div class="category-header">
+                        <div class="category-icon">3</div>
+                        <h3>การพัฒนาบุคลากร</h3>
+                    </div>
+                    <div class="category-description">
+                        การพัฒนาครูและบุคลากรทางการศึกษาในการจัดการเรียนรู้ การพัฒนาตนเอง และการเพิ่มพูนความรู้ความสามารถในการปฏิบัติงาน
+                    </div>
+                    <div class="document-grid">
+                        <div class="document-item">
+                            <div class="document-title">การพัฒนาตนเอง ID PLAN</div>
+                            <div class="document-meta">
+                                <span class="document-type">แผน</span>
+                                <span>•</span>
+                                <span>พัฒนาตนเอง</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1IIdOU2UDEU3Z7Rktpc4yJruCeuPIUi5M/view?usp=sharing" class="document-link" target="_blank">
+                                🎯 ดูแผน ID
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. การประเมินผลการปฏิบัติงานบุคลากร -->
+                <div class="hr-category">
+                    <div class="category-header">
+                        <div class="category-icon">4</div>
+                        <h3>การประเมินผลการปฏิบัติงานบุคลากร</h3>
+                    </div>
+                    <div class="category-description">
+                        การประเมินผลการปฏิบัติงานของบุคลากร รายงานผลการประเมินเงินเดือน และการประเมินประสิทธิภาพการทำงาน เพื่อให้เกิดการพัฒนาและปรับปรุงการทำงาน
+                    </div>
+                    <div class="document-grid">
+                        <div class="document-item">
+                            <div class="document-title">ผลการประเมินลูกจ้าง 2567</div>
+                            <div class="document-meta">
+                                <span class="document-type">รายงาน</span>
+                                <span>•</span>
+                                <span>การประเมิน</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1VijapAiyErlltPwMyJqkiF7mrb86GOEW/view?usp=sharing" class="document-link" target="_blank">
+                                📊 ดูผลประเมิน
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. การสร้างขวัญกำลังใจ -->
+                <div class="hr-category">
+                    <div class="category-header">
+                        <div class="category-icon">5</div>
+                        <h3>การสร้างขวัญกำลังใจ</h3>
+                    </div>
+                    <div class="category-description">
+                        การขอพระราชทานเครื่องราชอิสริยาภรณ์ การแสดงความยินดีครูและบุคลากรทางการศึกษาที่ผ่านการเลื่อนวิทยฐานะที่สูงขึ้น การเชิดชูเกียรติครูและบุคลากรดีเด่น และกิจกรรมอื่นๆ ที่ส่งเสริมขวัญกำลังใจ
+                    </div>
+                    <div class="document-grid">
+                        <div class="document-item">
+                            <div class="document-title">การสร้างขวัญกำลังใจ</div>
+                            <div class="document-meta">
+                                <span class="document-type">เอกสาร</span>
+                                <span>•</span>
+                                <span>สร้างขวัญ</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1BAU0sAPBpJrMTPDQhKVuVytMqrylnEGp/view?usp=sharing" class="document-link" target="_blank">
+                                🏆 ดูเอกสาร
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2568 วิทยาลัยอาชีวศึกษาอุดรธานี | หลักเกณฑ์การบริหารและพัฒนาทรัพยากรบุคคล</p>
+        </div>
+    </footer>
+</body>
+</html>
