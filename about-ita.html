@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกี่ยวกับ ITA - การประเมินคุณธรรมและความโปร่งใส</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles - Red Theme */
+        .header {
+            background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(220, 38, 38, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            background: rgba(255,255,255,0.2);
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 28px;
+            font-weight: 700;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .title-section h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .title-section p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .year-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 0;
+            background-color: #ffffff;
+        }
+
+        .page-hero {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%);
+            border-radius: 20px;
+            border: 1px solid #fca5a5;
+        }
+
+        .page-hero h1 {
+            font-size: 48px;
+            color: #DC2626;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .page-hero p {
+            font-size: 20px;
+            color: #991b1b;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 80px;
+        }
+
+        section h2 {
+            font-size: 36px;
+            color: #DC2626;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Definition Card */
+        .definition-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.1);
+            border-left: 5px solid #DC2626;
+            border: 1px solid #fecaca;
+        }
+
+        .definition-card h3 {
+            font-size: 28px;
+            color: #DC2626;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .definition-card p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        /* Components Grid */
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .component-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #fecaca;
+        }
+
+        .component-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.15);
+            border-color: #f87171;
+        }
+
+        .component-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .component-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .component-card h3 {
+            font-size: 24px;
+            color: #DC2626;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .component-card h4 {
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 15px;
+        }
+
+        .component-card p {
+            color: #374151;
+        }
+
+        .component-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #fecaca;
+        }
+
+        .weight-badge {
+            background: linear-gradient(135deg, #DC2626, #B91C1C);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .indicators {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* Indicators List */
+        .indicators-list {
+            margin-top: 40px;
+        }
+
+        .indicator-category {
+            margin-bottom: 50px;
+        }
+
+        .indicator-category h3 {
+            font-size: 28px;
+            color: #1f2937;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #DC2626;
+            font-weight: 600;
+        }
+
+        .indicators-group {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .indicator-item {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #fecaca;
+        }
+
+        .indicator-item:hover {
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.12);
+            border-color: #f87171;
+        }
+
+        .indicator-header {
+            display: flex;
+            align-items: center;
+            padding: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .indicator-header:hover {
+            background: #fef2f2;
+        }
+
+        .indicator-number {
+            background: linear-gradient(135deg, #DC2626, #B91C1C);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 600;
+            margin-right: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+        }
+
+        .indicator-info {
+            flex: 1;
+        }
+
+        .indicator-info h4 {
+            font-size: 22px;
+            color: #1f2937;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .indicator-info p {
+            font-size: 16px;
+            color: #6b7280;
+            margin: 0;
+        }
+
+        .expand-btn {
+            background: #DC2626;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+        }
+
+        .expand-btn:hover {
+            background: #B91C1C;
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+        }
+
+        .expand-btn.active {
+            transform: rotate(45deg);
+            background: #991b1b;
+        }
+
+        .sub-indicators {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #fef2f2;
+            border-top: 1px solid #fecaca;
+        }
+
+        .sub-indicators.active {
+            max-height: 500px;
+        }
+
+        .sub-indicators ul {
+            list-style: none;
+            padding: 25px;
+            margin: 0;
+        }
+
+        .sub-indicators li {
+            padding: 12px 0;
+            border-bottom: 1px solid #fecaca;
+            color: #374151;
+            font-size: 16px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .sub-indicators li:before {
+            content: "•";
+            color: #DC2626;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .sub-indicators li:last-child {
+            border-bottom: none;
+        }
+
+        .sub-indicators strong {
+            color: #DC2626;
+            font-weight: 600;
+        }
+
+        /* Importance Grid */
+        .importance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .importance-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #fecaca;
+        }
+
+        .importance-card:hover {
+            transform: translateY(-5px);
+            border-color: #f87171;
+        }
+
+        .importance-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .importance-card h3 {
+            font-size: 22px;
+            color: #DC2626;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .importance-card p {
+            color: #374151;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #DC2626;
+            font-weight: 600;
+        }
+
+        .footer-section p {
+            line-height: 1.6;
+            color: #d1d5db;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #DC2626;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #374151;
+            color: #d1d5db;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .logo-section {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .title-section h1 {
+                font-size: 24px;
+            }
+
+            .title-section p {
+                font-size: 16px;
+            }
+
+            .page-hero h1 {
+                font-size: 32px;
+            }
+
+            .page-hero p {
+                font-size: 18px;
+            }
+
+            .components-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .indicator-header {
+                padding: 20px;
+            }
+
+            .indicator-info h4 {
+                font-size: 18px;
+            }
+
+            .importance-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Additional Red Theme Enhancements */
+        .ita-definition {
+            background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
+            padding: 60px 0;
+            border-radius: 30px;
+            margin: 40px 0;
+        }
+
+        .assessment-components {
+            background: #ffffff;
+            padding: 60px 0;
+        }
+
+        .ten-indicators {
+            background: linear-gradient(135deg, #ffffff 0%, #fef2f2 100%);
+            padding: 60px 0;
+            border-radius: 30px;
+        }
+
+        .ita-importance {
+            background: #ffffff;
+            padding: 60px 0;
+        }
+
+        /* Scroll Animation Effects */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .indicator-item {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .component-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .importance-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+       
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        ITA
+                    </div>
+                    <div class="title-section">
+                        <h1 id="org-name">การประเมินคุณธรรมและความโปร่งใส</h1>
+                        <p id="org-name-en">Integrity and Transparency Assessment</p>
+                    </div>
+                </div>
+                <div class="year-badge">
+                    <span id="current-year">ปีงบประมาณ 2568</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <div id="nav-container">
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>เกี่ยวกับ ITA</h1>
+                <p>ระบบการประเมินคุณธรรมและความโปร่งใสในการดำเนินงานของหน่วยงานภาครัฐ</p>
+            </div>
+        </section>
+
+        <!-- ITA Definition Section -->
+        <section class="ita-definition">
+            <div class="container">
+                <div class="definition-content">
+                    <h2>ความหมายของ ITA</h2>
+                    <div class="definition-card">
+                        <h3>ITA (Integrity and Transparency Assessment)</h3>
+                        <p>การประเมินคุณธรรมและความโปร่งใสในการดำเนินงานของหน่วยงานภาครัฐ เป็นเครื่องมือการประเมินเชิงบวกเพื่อเป็นมาตรการป้องกันการทุจริต และเป็นกลไกในการสร้างความตระหนักให้หน่วยงานภาครัฐมีการดำเนินงานอย่างโปร่งใสและมีคุณธรรม</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Assessment Components -->
+        <section class="assessment-components">
+            <div class="container">
+                <h2>องค์ประกอบการประเมิน ITA</h2>
+                <div class="components-grid">
+                    <div class="component-card">
+                        <div class="component-header">
+                            <div class="component-icon">👥</div>
+                            <h3>IIT</h3>
+                            <h4>การรับรู้ภายใน</h4>
+                        </div>
+                        <p>แบบวัดการรับรู้ของผู้มีส่วนได้ส่วนเสียภายใน (Internal Integrity and Transparency Assessment)</p>
+                        <div class="component-details">
+                            <div class="weight-badge">น้ำหนัก 30%</div>
+                            <div class="indicators">ตัวชี้วัดที่ 1-5</div>
+                        </div>
+                    </div>
+
+                    <div class="component-card">
+                        <div class="component-header">
+                            <div class="component-icon">🌐</div>
+                            <h3>EIT</h3>
+                            <h4>การรับรู้ภายนอก</h4>
+                        </div>
+                        <p>แบบวัดการรับรู้ของผู้มีส่วนได้ส่วนเสียภายนอก (External Integrity and Transparency Assessment)</p>
+                        <div class="component-details">
+                            <div class="weight-badge">น้ำหนัก 30%</div>
+                            <div class="indicators">ตัวชี้วัดที่ 6-8</div>
+                        </div>
+                    </div>
+
+                    <div class="component-card">
+                        <div class="component-header">
+                            <div class="component-icon">📊</div>
+                            <h3>OIT</h3>
+                            <h4>เปิดเผยข้อมูล</h4>
+                        </div>
+                        <p>แบบตรวจการเปิดเผยข้อมูลสาธารณะ (Open Data Integrity and Transparency Assessment)</p>
+                        <div class="component-details">
+                            <div class="weight-badge">น้ำหนัก 40%</div>
+                            <div class="indicators">ตัวชี้วัดที่ 9-10</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10 Indicators -->
+        <section class="ten-indicators">
+            <div class="container">
+                <h2>10 ตัวชี้วัดหลัก</h2>
+                <div class="indicators-list">
+                    <div class="indicator-category">
+                        <h3>การรับรู้ภายใน (IIT)</h3>
+                        <div class="indicators-group">
+                            <div class="indicator-item">
+                                <div class="indicator-header" onclick="toggleSubIndicators(this)">
+                                    <span class="indicator-number">1</span>
+                                    <div class="indicator-info">
+                                        <h4>การปฏิบัติหน้าที่</h4>
+                                        <p>การปฏิบัติงานตามมาตรฐานและความโปร่งใส</p>
+                                    </div>
+                                    <button class="expand-btn">+</button>
+                                </div>
+                                <div class="sub-indicators">
+                                    <ul>
+                                        <li>การปฏิบัติงาน/ให้บริการตามขั้นตอนและระยะเวลาที่กำหนด</li>
+                                        <li>การปฏิบัติงานอย่างเท่าเทียมกันระหว่างผู้มาติดต่อทั่วไปและผู้ที่รู้จักเป็นการส่วนตัว</li>
+                                        <li>พฤติกรรมการปฏิบัติงานที่มุ่งผลสำเร็จ ให้ความสำคัญกับงาน และพร้อมรับผิดชอบ</li>
+                                        <li>การเรียกรับเงิน ทรัพย์สิน หรือประโยชน์อื่นๆ เพื่อแลกกับการปฏิบัติงาน</li>
+                                        <li>การรับของตามขนบธรรมเนียมประเพณี หรือวัฒนธรรม</li>
+                                        <li>การให้เงิน ทรัพย์สิน หรือประโยชน์อื่นๆ แก่บุคคลภายนอกเพื่อสร้างความสัมพันธ์</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="indicator-item">
+                                <div class="indicator-header" onclick="toggleSubIndicators(this)">
+                                    <span class="indicator-number">2</span>
+                                    <div class="indicator-info">
+                                        <h4>การใช้งบประมาณ</h4>
+                                        <p>การใช้จ่ายงบประมาณอย่างคุ้มค่าและโปร่งใส</p>
+                                    </div>
+                                    <button class="expand-btn">+</button>
+                                </div>
+                                <div class="sub-indicators">
+                                    <ul>
+                                        <li>ความรู้เกี่ยวกับแผนการใช้จ่ายงบประมาณประจำปีของหน่วยงาน</li>
+                                        <li>การใช้จ่ายงบประมาณอย่างคุ้มค่าและไม่บิดเบือนวัตถุประสงค์</li>
+                                        <li>การใช้จ่ายงบประมาณเพื่อประโยชน์ส่วนตัว กลุ่ม หรือพวกพ้อง</li>
+                                        <li>การเบิกจ่ายเงินที่เป็นเท็จ เช่น ค่าทำงานล่วงเวลา ค่าวัสดุอุปกรณ์ หรือค่าเดินทาง</li>
+                                        <li>การจัดซื้อจัดจ้างและการตรวจรับพัสดุอย่างโปร่งใสและไม่เอื้อประโยชน์ให้ผู้ประกอบการรายใดรายหนึ่ง</li>
+                                        <li>การเปิดโอกาสให้บุคลากรมีส่วนร่วมในการตรวจสอบการใช้จ่ายงบประมาณ</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="indicator-item">
+                                <div class="indicator-header" onclick="toggleSubIndicators(this)">
+                                    <span class="indicator-number">3</span>
+                                    <div class="indicator-info">
+                                        <h4>การใช้อำนาจ</h4>
+                                        <p>การใช้อำนาจอย่างเป็นธรรมและไม่เลือกปฏิบัติ</p>
+                                    </div>
+                                    <button class="expand-btn">+</button>
+                                </div>
+                                <div class="sub-indicators">
+                                    <ul>
+                                        <li>การมอบหมายงานจากผู้บังคับบัญชาอย่างเป็นธรรม</li>
+                                        <li>การประเมินผลการปฏิบัติงานตามระดับคุณภาพของผลงาน</li>
+                                        <li>การคัดเลือกบุคลากรเพื่อรับการฝึกอบรม การศึกษาดูงาน หรือทุนการศึกษาอย่างเป็นธรรม</li>
+                                        <li>การถูกผู้บังคับบัญชาสั่งการให้ทำธุระส่วนตัว</li>
+                                        <li>การถูกผู้บังคับบัญชาสั่งการให้ทำในสิ่งที่ไม่ถูกต้องหรือมีความเสี่ยงต่อการทุจริต</li>
+                                        <li>การบริหารงานบุคคลที่ถูกแทรกแซง มีการซื้อขายตำแหน่ง หรือเอื้อประโยชน์ให้กลุ่มหรือพวกพ้อง</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="indicator-item">
+                                <div class="indicator-header" onclick="toggleSubIndicators(this)">
+                                    <span class="indicator-number">4</span>
+                                    <div class="indicator-info">
+                                        <h4>การใช้ทรัพย์สินของราชการ</h4>
+                                        <p>การดูแลและใช้ทรัพย์สินราชการอย่างถูกต้อง</p>
+                                    </div>
+                                    <button class="expand-btn">+</button>
+                                </div>
+                                <div class="sub-indicators">
+                                    <ul>
+                                        <li>การเอาทรัพย์สินของราชการไปเป็นของส่วนตัวหรือให้กลุ่มหรือพวกพ้อง</li>
+                                        <li>ขั้นตอนการขออนุญาตเพื่อยืมทรัพย์สินของราชการมีความสะดวก</li>
+                                        <li>การขออนุญาตอย่างถูกต้องเมื่อต้องยืมทรัพย์สินของราชการ</li>
+                                        <li>การที่บุคคลภายนอกหรือภาคเอกชนนำทรัพย์สินของราชการไปใช้โดยไม่ได้รับอนุญาต</li>
+                                        <li>ความรู้เกี่ยวกับแนวปฏิบัติการใช้ทรัพย์สินของราชการที่ถูกต้อง</li>
+                                        <li>การกำกับดูแลและตรวจสอบการใช้ทรัพย์สินของราชการ</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="indicator-item">
+                                <div class="indicator-header" onclick="toggleSubIndicators(this)">
+                                    <span class="indicator-number">5</span>
+                                    <div class="indicator-info">
+                                        <h4>การแก้ไขปัญหาการทุจริต</h4>
+                                        <p>มาตรการป้องกันและแก้ไขการทุจริต</p>
+                                    </div>
+                                    <button class="expand-btn">+</button>
+                                </div>
+                                <div class="sub-indicators">
+                                    <ul>
+                                        <li>ความสำคัญที่ผู้บริหารสูงสุดให้กับการต่อต้านการทุจริต</li>
+                                        <li>การทบทวนนโยบายหรือมาตรการป้องกันการทุจริตและการจัดทำแผนงานด้านการป้องกันและปราบปรามการทุจริต</li>
+                                        <li>การแก้ไขปัญหาการทุจริตในหน่วยงาน</li>
+                                        <li>การเฝ้าระวัง ตรวจสอบ และลงโทษทางวินัยเมื่อมีการทุจริต</li>
+                                        <li>การนำผลการตรวจสอบของฝ่ายตรวจสอบทั้งภายในและภายนอกไปปรับปรุงการทำงาน</li>
+                                        <li>ความเชื่อมั่นในการร้องเรียนเมื่อพบเห็นการทุจริต</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="indicator-category">
+                        <h3>การรับรู้ภายนอก (EIT)</h3>
+                        <div class="indicators-group">
+                            <div class="indicator-item">
+                                <div class="indicator-header" onclick="toggleSubIndicators(this)">
+                                    <span class="indicator-number">6</span>
+                                    <div class="indicator-info">
+                                        <h4>คุณภาพการดำเนินงาน</h4>
+                                        <p>มาตรฐานการให้บริการและการปฏิบัติงาน</p>
+                                    </div>
+                                    <button class="expand-btn">+</button>
+                                </div>
+                                <div class="sub-indicators">
+                                    <ul>
+                                        <li>การปฏิบัติงาน/ให้บริการตามขั้นตอนและระยะเวลาที่กำหนด</li>
+                                        <li>การปฏิบัติงาน/ให้บริการอย่างเท่าเทียมกัน</li>
+                                        <li>การให้ข้อมูลเกี่ยวกับการดำเนินการ/ให้บริการอย่างตรงไปตรงมา ไม่ปิดบังหรือบิดเบือนข้อมูล</li>
+                                        <li>การถูกเจ้าหน้าที่ร้องขอให้จ่ายหรือให้เงิน ทรัพย์สิน หรือประโยชน์อื่นๆ เพื่อแลกกับการปฏิบัติงาน</li>
+                                        <li>การดำเนินงานโดยคำนึงถึงประโยชน์ของประชาชนและส่วนรวมเป็นหลัก</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="indicator-item">
+                                <div class="indicator-header" onclick="toggleSubIndicators(this)">
+                                    <span class="indicator-number">7</span>
+                                    <div class="indicator-info">
+                                        <h4>ประสิทธิภาพการสื่อสาร</h4>
+                                        <p>การเผยแพร่ข้อมูลและการสื่อสารกับสาธารณะ</p>
+                                    </div>
+                                    <button class="expand-btn">+</button>
+                                </div>
+                                <div class="sub-indicators">
+                                    <ul>
+                                        <li>การเผยแพร่ข้อมูลที่เข้าถึงง่าย ไม่ซับซ้อน และมีช่องทางหลากหลาย</li>
+                                        <li>การเผยแพร่ผลงานหรือข้อมูลที่สาธารณชนควรรับทราบอย่างชัดเจน</li>
+                                        <li>การมีช่องทางรับฟังคำติชมหรือความคิดเห็นเกี่ยวกับการดำเนินงาน/การให้บริการ</li>
+                                        <li>การชี้แจงและตอบคำถามเมื่อมีข้อกังวลสงสัยเกี่ยวกับการดำเนินงาน</li>
+                                        <li>การมีช่องทางให้ผู้มาติดต่อร้องเรียนการทุจริตของเจ้าหน้าที่ในหน่วยงาน</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="indicator-item">
+                                <div class="indicator-header" onclick="toggleSubIndicators(this)">
+                                    <span class="indicator-number">8</span>
+                                    <div class="indicator-info">
+                                        <h4>การปรับปรุงระบบการทำงาน</h4>
+                                        <p>การพัฒนาและปรับปรุงกระบวนการทำงาน</p>
+                                    </div>
+                                    <button class="expand-btn">+</button>
+                                </div>
+                                <div class="sub-indicators">
+                                    <ul>
+                                        <li>การปรับปรุงคุณภาพการปฏิบัติงาน/การให้บริการให้ดีขึ้น</li>
+                                        <li>การปรับปรุงวิธีการและขั้นตอนการดำเนินงาน/การให้บริการให้ดีขึ้น</li>
+                                        <li>การนำเทคโนโลยีมาใช้ในการดำเนินงาน/การให้บริการให้เกิดความสะดวกรวดเร็ว</li>
+                                        <li>การเปิดโอกาสให้ผู้รับบริการมีส่วนร่วมในการปรับปรุงพัฒนาการดำเนินงาน</li>
+                                        <li>การปรับปรุงการดำเนินงาน/การให้บริการให้มีความโปร่งใสมากขึ้น</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="indicator-category">
+                        <h3>เปิดเผยข้อมูล (OIT)</h3>
+                        <div class="indicators-group">
+                            <div class="indicator-item">
+                                <div class="indicator-header" onclick="toggleSubIndicators(this)">
+                                    <span class="indicator-number">9</span>
+                                    <div class="indicator-info">
+                                        <h4>การเปิดเผยข้อมูล</h4>
+                                        <p>การเผยแพร่ข้อมูลสาธารณะอย่างโปร่งใส</p>
+                                    </div>
+                                    <button class="expand-btn">+</button>
+                                </div>
+                                <div class="sub-indicators">
+                                    <ul>
+                                        <li><strong>ข้อมูลพื้นฐาน:</strong> โครงสร้าง ข้อมูลผู้บริหาร อำนาจหน้าที่ แผนยุทธศาสตร์ ข้อมูลการติดต่อ กฎหมายที่เกี่ยวข้อง ข่าวประชาสัมพันธ์ Q&A และ Social Network</li>
+                                        <li><strong>การบริหารงาน:</strong> แผนดำเนินงานประจำปี รายงานการกำกับติดตาม รายงานผลการดำเนินงาน คู่มือการปฏิบัติงาน คู่มือการให้บริการ ข้อมูลเชิงสถิติการให้บริการ รายงานความพึงพอใจ และ E-Service</li>
+                                        <li><strong>การบริหารเงินงบประมาณ:</strong> แผนการใช้จ่ายงบประมาณ รายงานกำกับติดตามการใช้จ่าย รายงานผลการใช้จ่าย แผนการจัดซื้อจัดจ้าง ประกาศการจัดซื้อจัดจ้าง สรุปผลการจัดซื้อจัดจ้าง และรายงานผลการจัดซื้อจัดจ้าง</li>
+                                        <li><strong>การบริหารทรัพยากรบุคคล:</strong> นโยบายการบริหารทรัพยากรบุคคล การดำเนินการตามนโยบาย หลักเกณฑ์การบริหารและพัฒนาทรัพยากรบุคคล และรายงานผลการบริหารและพัฒนาทรัพยากรบุคคล</li>
+                                        <li><strong>การส่งเสริมความโปร่งใส:</strong> แนวปฏิบัติการจัดการเรื่องร้องเรียน ช่องทางแจ้งเรื่องร้องเรียน ข้อมูลเชิงสถิติเรื่องร้องเรียน ช่องทางการรับฟังความคิดเห็น และการเปิดโอกาสให้เกิดการมีส่วนร่วม</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="indicator-item">
+                                <div class="indicator-header" onclick="toggleSubIndicators(this)">
+                                    <span class="indicator-number">10</span>
+                                    <div class="indicator-info">
+                                        <h4>การป้องกันการทุจริต</h4>
+                                        <p>มาตรการและแผนงานป้องกันการทุจริต</p>
+                                    </div>
+                                    <button class="expand-btn">+</button>
+                                </div>
+                                <div class="sub-indicators">
+                                    <ul>
+                                        <li><strong>การดำเนินการเพื่อป้องกันการทุจริต:</strong> เจตจำนงสุจริตของผู้บริหาร การมีส่วนร่วมของผู้บริหาร การประเมินความเสี่ยงการทุจริต การดำเนินการเพื่อจัดการความเสี่ยง การเสริมสร้างวัฒนธรรมองค์กร แผนปฏิบัติการป้องกันการทุจริต รายงานการกำกับติดตาม และรายงานผลการดำเนินการป้องกันการทุจริต</li>
+                                        <li><strong>มาตรการภายในเพื่อป้องกันการทุจริต:</strong> มาตรการส่งเสริมคุณธรรมและความโปร่งใสภายในหน่วยงาน และการดำเนินการตามมาตรการส่งเสริมคุณธรรมและความโปร่งใส</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Importance Section -->
+        <section class="ita-importance">
+            <div class="container">
+                <h2>ความสำคัญของ ITA</h2>
+                <div class="importance-grid">
+                    <div class="importance-card">
+                        <div class="importance-icon">🎯</div>
+                        <h3>สร้างความโปร่งใส</h3>
+                        <p>ส่งเสริมให้หน่วยงานดำเนินงานอย่างโปร่งใสและตรวจสอบได้</p>
+                    </div>
+                    <div class="importance-card">
+                        <div class="importance-icon">🛡️</div>
+                        <h3>ป้องกันการทุจริต</h3>
+                        <p>เป็นกลไกในการป้องกันและลดโอกาสเกิดการทุจริต</p>
+                    </div>
+                    <div class="importance-card">
+                        <div class="importance-icon">⚖️</div>
+                        <h3>ส่งเสริมธรรมาภิบาล</h3>
+                        <p>พัฒนาการบริหารจัดการภาครัฐให้มีธรรมาภิบาล</p>
+                    </div>
+                    <div class="importance-card">
+                        <div class="importance-icon">📈</div>
+                        <h3>ยกระดับมาตรฐาน</h3>
+                        <p>ปรับปรุงและพัฒนาคุณภาพการดำเนินงานอย่างต่อเนื่อง</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>เกี่ยวกับ ITA</h3>
+                    <p>การประเมินคุณธรรมและความโปร่งใสในการดำเนินงานของหน่วยงานภาครัฐ</p>
+                    <p id="footer-org-name">วิทยาลัยอาชีวศึกษาอุดรธานี</p>
+                </div>
+                <div class="footer-section">
+                    <h3>ลิงก์ที่เกี่ยวข้อง</h3>
+                    <ul>
+                        <li><a href="https://www.nacc.go.th" target="_blank">สำนักงาน ป.ป.ช.</a></li>
+                        <li><a href="https://itas.nacc.go.th" target="_blank">ระบบ ITAS</a></li>
+                        <li><a href="https://www.vec.go.th" target="_blank">สำนักงานคณะกรรมการการอาชีวศึกษา</a></li>
+                        <li><a href="https://www.transparency.org" target="_blank">Transparency International</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>ติดต่อเรา</h3>
+                    <p>โทร: <span id="footer-phone">042-246-690</span><br>
+                    อีเมล: <span id="footer-email">udvc@udvc.ac.th</span></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="footer-year">2568</span> สงวนลิขสิทธิ์ | <span id="footer-org">วิทยาลัยอาชีวศึกษาอุดรธานี</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- <script src="navloader.js"></script> -->
+    <script src="script.js"></script>
+    <!-- <script>
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof loadNavigation === 'function') {
+      loadNavigation();
+    }
+  });
+</script> -->
+
+    <script>
+        function toggleSubIndicators(element) {
+            const subIndicators = element.nextElementSibling;
+            const expandBtn = element.querySelector('.expand-btn');
+            
+            if (subIndicators.classList.contains('active')) {
+                subIndicators.classList.remove('active');
+                expandBtn.classList.remove('active');
+                expandBtn.textContent = '+';
+            } else {
+                // Close all other open indicators
+                document.querySelectorAll('.sub-indicators.active').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.querySelectorAll('.expand-btn.active').forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.textContent = '+';
+                });
+                
+                // Open the clicked one
+                subIndicators.classList.add('active');
+                expandBtn.classList.add('active');
+                expandBtn.textContent = '×';
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll effect for header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

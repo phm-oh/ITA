@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>นโยบาย No Gift Policy - วิทยาลัยอาชีวศึกษาอุดรธานี</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sarabun', Arial, sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            background: white;
+            color: #dc2626;
+            padding: 12px 25px;
+            border: 2px solid #dc2626;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .back-link:hover {
+            background: #dc2626;
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #dc2626;
+            color: #666;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            font-size: 1rem;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 15px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 3px solid #dc2626;
+        }
+
+        .policy-document {
+            background: white;
+            border: 3px solid #dc2626;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .policy-document::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #dc2626, #b91c1c, #dc2626);
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .policy-header {
+            text-align: center;
+            border-bottom: 3px double #dc2626;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .policy-header h1 {
+            color: #dc2626;
+            font-size: 2rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            line-height: 1.3;
+        }
+
+        .policy-header h2 {
+            color: #666;
+            font-size: 1.1rem;
+            font-weight: 500;
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .policy-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .policy-content {
+            line-height: 1.8;
+            text-align: justify;
+            color: #333;
+            font-size: 1.05rem;
+        }
+
+        .policy-content p {
+            margin-bottom: 15px;
+            text-indent: 2em;
+        }
+
+        .policy-content p.no-indent {
+            text-indent: 0;
+        }
+
+        .policy-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: #dc2626;
+            font-weight: 600;
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #dc2626;
+            line-height: 1.8;
+        }
+
+        .principle-section {
+            background: linear-gradient(135deg, #fef2f2 0%, #fff5f5 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #dc2626;
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.1);
+        }
+
+        .principle-section h3 {
+            text-align: center;
+            color: #dc2626;
+            border-bottom: 2px solid #dc2626;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
+
+        .principle-list {
+            list-style: none;
+            counter-reset: principle-counter;
+        }
+
+        .principle-item {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            counter-increment: principle-counter;
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .principle-item::before {
+            content: counter(principle-counter);
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background: #dc2626;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .principle-item h4 {
+            color: #dc2626;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        .principle-item p {
+            margin-bottom: 10px;
+            text-indent: 0;
+            line-height: 1.8;
+        }
+
+        .no-gift-highlight {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 25px 0;
+            border: 2px solid #dc2626;
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.2);
+        }
+
+        .no-gift-highlight h4 {
+            color: #dc2626;
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+            line-height: 1.4;
+        }
+
+        .no-gift-text {
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .policy-signature {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 3px solid #dc2626;
+        }
+
+        .policy-signature p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .signature-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 25px auto;
+            max-width: 400px;
+        }
+
+        .signature-image {
+            width: 250px;
+            height: 100px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            object-fit: contain;
+            background: transparent;
+            filter: brightness(1.1) contrast(1.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .signature-line {
+            border-bottom: 2px solid #333;
+            width: 350px;
+            margin: 10px auto;
+            padding-bottom: 8px;
+            position: relative;
+        }
+
+        .signature-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #dc2626;
+            margin-top: 10px;
+        }
+
+        .signature-title {
+            font-weight: 600;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .signature-date {
+            font-style: italic;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .official-seal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            border: 3px solid #dc2626;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .official-seal img {
+            width: 120%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .official-stamp {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .stamp-container {
+            text-align: center;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 2px solid #dc2626;
+            transition: all 0.3s ease;
+        }
+
+        .stamp-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            border-color: #b91c1c;
+        }
+
+        .stamp-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .stamp-image {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 10px;
+            filter: brightness(1.05) contrast(1.1);
+            transition: all 0.3s ease;
+        }
+
+        .stamp-link:hover .stamp-image {
+            transform: scale(1.05);
+            filter: brightness(1.1) contrast(1.2);
+        }
+
+        .stamp-text {
+            color: #dc2626;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-top: 8px;
+            
+            transition: color 0.3s ease;
+        }
+
+        .stamp-link:hover .stamp-text {
+            color: #b91c1c;
+        }
+
+        .click-hint {
+            color: #666;
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-top: 5px;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .policy-document {
+                padding: 20px 15px;
+                margin: 20px 0;
+            }
+            
+            .policy-header h1 {
+                font-size: 1.6rem;
+                line-height: 1.3;
+            }
+
+            .policy-header h2 {
+                font-size: 1rem;
+                line-height: 1.4;
+            }
+
+            .policy-header p {
+                font-size: 1rem;
+            }
+
+            .policy-content {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+
+            .policy-content p {
+                margin-bottom: 12px;
+                text-indent: 1.5em;
+            }
+
+            .policy-intro {
+                font-size: 1.1rem;
+                padding: 15px;
+                line-height: 1.7;
+            }
+
+            .principle-section {
+                padding: 20px 15px;
+            }
+
+            .principle-section h3 {
+                font-size: 1.2rem;
+                line-height: 1.4;
+            }
+
+            .principle-item {
+                padding: 15px;
+                padding-left: 50px;
+                margin: 12px 0;
+            }
+
+            .principle-item::before {
+                width: 25px;
+                height: 25px;
+                font-size: 0.9rem;
+                left: 15px;
+                top: 15px;
+            }
+
+            .principle-item h4 {
+                font-size: 1rem;
+                line-height: 1.4;
+                margin-bottom: 8px;
+            }
+
+            .principle-item p {
+                line-height: 1.7;
+                font-size: 0.95rem;
+                margin-bottom: 8px;
+            }
+
+            .no-gift-highlight {
+                padding: 20px 15px;
+            }
+
+            .no-gift-highlight h4 {
+                font-size: 1.2rem;
+                line-height: 1.4;
+            }
+
+            .no-gift-text {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                word-break: keep-all;
+                overflow-wrap: break-word;
+            }
+
+            .signature-container {
+                max-width: 100%;
+            }
+
+            .signature-image {
+                width: 200px;
+                height: 80px;
+                margin-bottom: 12px;
+                filter: brightness(1.1) contrast(1.1);
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            }
+
+            .signature-line {
+                width: 280px;
+            }
+
+            .signature-name {
+                font-size: 1.1rem;
+            }
+
+            .signature-title {
+                font-size: 1rem;
+            }
+
+            .signature-date {
+                font-size: 1rem;
+                margin-top: 12px;
+            }
+
+            .official-seal {
+                display: none;
+            }
+
+            .back-link {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+
+            .breadcrumb {
+                font-size: 0.9rem;
+                padding: 12px 20px;
+            }
+
+            .hero-image {
+                margin: 15px auto;
+                border-radius: 10px;
+            }
+
+            .stamp-container {
+                padding: 20px;
+                margin: 20px 10px;
+            }
+
+            .stamp-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .stamp-text {
+                font-size: 0.9rem;
+            }
+
+            .click-hint {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .policy-header h1 {
+                font-size: 1.4rem;
+            }
+
+            .policy-header h2 {
+                font-size: 0.95rem;
+            }
+
+            .principle-item {
+                padding: 12px;
+                padding-left: 45px;
+                margin: 10px 0;
+            }
+
+            .principle-item::before {
+                width: 22px;
+                height: 22px;
+                font-size: 0.8rem;
+                left: 12px;
+                top: 12px;
+            }
+
+            .signature-line {
+                width: 250px;
+            }
+
+            .signature-image {
+                width: 180px;
+                height: 70px;
+                margin-bottom: 10px;
+                filter: brightness(1.1) contrast(1.1);
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            }
+
+            .signature-date {
+                margin-top: 10px;
+            }
+
+            .no-gift-text {
+                font-size: 0.75rem;
+                line-height: 1.5;
+            }
+
+            .no-gift-highlight h4 {
+                font-size: 1.1rem;
+            }
+
+            .stamp-container {
+                padding: 15px;
+                margin: 15px 5px;
+            }
+
+            .stamp-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .stamp-text {
+                font-size: 0.85rem;
+            }
+
+            .click-hint {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .no-gift-text {
+                font-size: 0.6rem;
+                line-height: 1.4;
+            }
+
+            .no-gift-highlight {
+                padding: 15px 10px;
+            }
+
+            .no-gift-highlight h4 {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+
+            .signature-line {
+                margin: 6px auto;
+            }
+
+            .stamp-container {
+                padding: 12px;
+                margin: 12px 3px;
+            }
+
+            .stamp-image {
+                width: 90px;
+                height: 90px;
+            }
+
+            .stamp-text {
+                font-size: 0.8rem;
+                line-height: 1.3;
+            }
+
+            .click-hint {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../data-disclosure.html" class="back-link">← กลับสู่หน้าเปิดเผยข้อมูล</a>
+        
+        <!-- <div class="breadcrumb">
+            📍 ตัวชี้วัดที่ 10.1 การดำเนินการเพื่อป้องกันการทุจริต → ข้อ 34 นโยบาย No Gift Policy
+        </div> -->
+
+        <img src="https://www.udvc.ac.th/wp-content/uploads/2024/01/416366851_764752515687720_3567431101495580154_n-768x773.jpg" alt="วิทยาลัยอาชีวศึกษาอุดรธานี - No Gift Policy" class="hero-image">
+
+        <div class="policy-document">
+            <div class="official-seal">
+                <img src="https://res.cloudinary.com/dzysz9ib8/image/upload/v1748184300/Udvc.imp_gork69.png" alt="Logo">
+            </div>
+
+            <div class="policy-header">
+                <h1>นโยบายการไม่รับของขวัญและของกำนัล</h1>
+                <h2>NO GIFT POLICY</h2>
+                <p>วิทยาลัยอาชีวศึกษาอุดรธานี</p>
+            </div>
+
+            <div class="policy-content">
+                <div class="policy-intro">
+                    "วิทยาลัยอาชีวศึกษาอุดรธานี มุ่งมั่นสร้างองค์กรที่โปร่งใส ปลอดการทุจริต<br>
+                    ด้วยนโยบายไม่รับ-ไม่ให้ของขวัญและของกำนัลทุกชนิด"
+                </div>
+
+                <p>ตามแผนปฏิรูปด้านการป้องกันและปราบปรามการทุจริตและประพฤติมิชอบ (ฉบับปรับปรุง) กำหนดกิจกรรมปฏิรูปที่สำคัญ (Big Rock) 4 ว่าด้วยการพัฒนาระบบราชการไทยให้โปร่งใส ไร้ผลประโยชน์</p>
+
+                <p>โดยมีเป้าหมายให้หน่วยงานของรัฐทุกหน่วยงานประกาศตนเป็นหน่วยงานที่เจ้าหน้าที่ของรัฐทุกคนไม่รับของขวัญและของกำนัลทุกชนิดจากการปฏิบัติหน้าที่</p>
+
+                <p class="no-indent"><strong>วิทยาลัยอาชีวศึกษาอุดรธานี</strong> ตระหนักถึงความสำคัญและสนับสนุนการดำเนินงานตามนโยบายของรัฐบาล</p>
+
+                <p>เพื่อเป็นการแสดงเจตนารมณ์ในการต่อต้านการทุจริตทุกรูปแบบ และเสริมสร้างความโปร่งใสภายในองค์กร จึงได้กำหนดนโยบายดังต่อไปนี้:</p>
+
+                <div class="principle-section">
+                    <h3>หลักการและแนวทางปฏิบัติ</h3>
+                    
+                    <ol class="principle-list">
+                        <li class="principle-item">
+                            <h4>การไม่รับของขวัญและของกำนัล</h4>
+                            <p>ผู้บริหาร บุคลากร และเจ้าหน้าที่ทุกคนของวิทยาลัยฯ จะไม่รับของขวัญ ของกำนัล หรือผลประโยชน์ใดๆ จากการปฏิบัติหน้าที่ ไม่ว่าก่อน ขณะ หรือหลังการปฏิบัติหน้าที่</p>
+                        </li>
+
+                        <li class="principle-item">
+                            <h4>การไม่ให้ของขวัญและของกำนัล</h4>
+                            <p>ห้ามไม่ให้บุคลากรของวิทยาลัยฯ มอบของขวัญ ของกำนัล หรือผลประโยชน์ใดๆ ให้แก่บุคคลภายนอกเพื่อแสวงหาประโยชน์หรือสร้างความสัมพันธ์ที่ไม่เหมาะสม</p>
+                        </li>
+
+                        <li class="principle-item">
+                            <h4>การสร้างวัฒนธรรมองค์กร</h4>
+                            <p>ส่งเสริมให้เกิดวัฒนธรรมการทำงานที่ยึดมั่นในความซื่อสัตย์ สุจริต โปร่งใส และเป็นธรรม โดยให้ความสำคัญกับการปฏิบัติหน้าที่เพื่อประโยชน์ส่วนรวม</p>
+                        </li>
+
+                        <li class="principle-item">
+                            <h4>การติดตามและประเมินผล</h4>
+                            <p>จัดให้มีระบบการติดตาม ประเมินผล และรายงานการปฏิบัติตามนโยบายอย่างต่อเนื่อง รวมทั้งมีมาตรการในการจัดการกับผู้ที่ฝ่าฝืนนโยบาย</p>
+                        </li>
+
+                        <li class="principle-item">
+                            <h4>การสื่อสารและประชาสัมพันธ์</h4>
+                            <p>เผยแพร่และสื่อสารนโยบายให้บุคลากรทุกคน ผู้รับบริการ และผู้มีส่วนได้ส่วนเสียได้รับทราบและเข้าใจอย่างชัดเจน</p>
+                        </li>
+
+                        <li class="principle-item">
+                            <h4>การให้ความร่วมมือ</h4>
+                            <p>ขอความร่วมมือจากผู้รับบริการ ผู้ติดต่อราชการ และบุคคลภายนอกในการไม่เสนอหรือมอบของขวัญ ของกำนัล หรือผลประโยชน์ใดๆ ให้แก่บุคลากรของวิทยาลัยฯ</p>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="no-gift-highlight">
+                    <h4>คำมั่นสัญญา NO GIFT POLICY</h4>
+                    <div class="no-gift-text">
+                        "วิทยาลัยอาชีวศึกษาอุดรธานี มุ่งมั่นที่จะปฏิบัติตามนโยบาย<br>
+                        'ไม่รับ - ไม่ให้' ของขวัญและของกำนัลทุกชนิด<br>
+                        เพื่อสร้างความโปร่งใสและความเป็นธรรม<br>
+                        ในการให้บริการแก่สังคมและประชาชน<br>
+                        อย่างยั่งยืนและต่อเนื่อง"
+                    </div>
+                </div>
+            </div>
+
+            <div class="policy-signature">
+                <p style="margin-bottom: 25px; font-weight: 600; font-size: 1.2rem;">ประกาศใช้โดย</p>
+                
+                <div class="signature-container">
+                    <img class="signature-image" src="/images/signager.png" alt="ลายเซ็นผู้อำนวยการ">
+                    <div class="signature-line">
+                        <p class="signature-name">(นางมนัสนันท์ ราตรีหว่าง)</p>
+                    </div>
+                    <p class="signature-title">ผู้อำนวยการวิทยาลัยอาชีวศึกษาอุดรธานี</p>
+                    <p class="signature-date">วันที่ 11 มกราคม พ.ศ. 2567</p>
+                </div>
+            </div>
+
+            <div class="official-stamp">
+                <a href="https://drive.google.com/file/d/1p7gBwBusYtLB8diJYYBqm1wLatyMIIgZ/view?usp=sharing" target="_blank" class="stamp-link">
+                    <div class="stamp-container">
+                        <!-- <img class="stamp-image" src="https://drive.google.com/uc?export=view&id=1p7gBwBusYtLB8diJYYBqm1wLatyMIIgZ" alt="ตราประทับวิทยาลัยอาชีวศึกษาอุดรธานี"> -->
+                        <p class="stamp-text">คลิกเพื่อดูต้นฉบับ</p>
+                        <!-- <p class="click-hint">คลิกเพื่อดูต้นฉบับ</p> -->
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

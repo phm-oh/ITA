@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>โครงการป้องกันการทุจริต - วิทยาลัยอาชีวศึกษาอุดรธานี</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        /* Reset และ Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Sarabun", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #dc143c;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .title-section h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .title-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .year-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-weight: 500;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Tab Navigation */
+        .tab-navigation {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .tab-menu {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+            padding: 1rem 2rem;
+            border: 2px solid rgba(220, 20, 60, 0.1);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(220, 20, 60, 0.1),
+                    transparent);
+            transition: left 0.5s;
+        }
+
+        .tab-button:hover::before {
+            left: 100%;
+        }
+
+        .tab-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.2);
+        }
+
+        .tab-button.active {
+            background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
+            color: white;
+            border-color: #dc143c;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+            min-height: calc(100vh - 400px);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            color: #dc143c;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-header .indicator-badge {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Project Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Collapsible Project Card */
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.1);
+            border: 2px solid rgba(220, 20, 60, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #dc143c, #8b0000);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.2);
+        }
+
+        /* Project Header - Always Visible */
+        .project-header {
+            padding: 2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-header:hover {
+            background: rgba(220, 20, 60, 0.02);
+        }
+
+        .project-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .project-title-section {
+            flex: 1;
+        }
+
+        .project-title {
+            color: #dc143c;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .project-type {
+            background: linear-gradient(135deg, #ffc107 0%, #ff8f00 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .expand-icon {
+            color: #dc143c;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Project Details - Collapsible */
+        .project-details {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .project-card.expanded .project-details {
+            max-height: 1000px;
+            padding: 0 2rem 2rem;
+        }
+
+        .project-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .project-info-grid {
+            margin-bottom: 2rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            color: #555;
+        }
+
+        .detail-icon {
+            color: #dc143c;
+            font-weight: bold;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            padding-top: 1rem;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
+            color: white;
+        }
+
+        .btn-outline {
+            background: white;
+            color: #dc143c;
+            border-color: #dc143c;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: #dc143c;
+            color: white;
+        }
+
+        /* Single Project Layout for o33 */
+        .single-project {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.1);
+            border: 2px solid rgba(220, 20, 60, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .single-project::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #dc143c, #8b0000);
+        }
+
+        .single-project .project-header {
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            margin-bottom: 2rem;
+            cursor: pointer;
+        }
+
+        .single-project .project-icon {
+            width: 80px;
+            height: 80px;
+            font-size: 2rem;
+        }
+
+        .single-project .project-details {
+            padding: 0 3rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .single-project.expanded .project-details {
+            max-height: 2000px;
+            padding: 0 3rem 3rem;
+        }
+
+        /* Statistics */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid rgba(220, 20, 60, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(220, 20, 60, 0.15);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #dc143c;
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Results Section */
+        .results-section {
+            margin-top: 2rem;
+        }
+
+        .results-header {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #dc143c;
+            margin-bottom: 2rem;
+        }
+
+        .results-header h4 {
+            color: #dc143c;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .result-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #28a745;
+            transition: all 0.3s ease;
+        }
+
+        .result-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.15);
+        }
+
+        .result-item h5 {
+            color: #28a745;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .result-item p {
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #333 0%, #222 100%);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #dc143c;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #dc143c;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 1rem;
+            text-align: center;
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .title-section h1 {
+                font-size: 1.8rem;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .tab-menu {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .project-actions {
+                flex-direction: column;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .single-project .project-details {
+                padding: 0 2rem;
+            }
+
+            .single-project.expanded .project-details {
+                padding: 0 2rem 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .project-card,
+            .single-project {
+                margin: 0 -10px;
+            }
+
+            .tab-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">ITA</div>
+                    <div class="title-section">
+                        <h1>โครงการป้องกันการทุจริต</h1>
+                        <p>วิทยาลัยอาชีวศึกษาอุดรธานี</p>
+                    </div>
+                </div>
+                <div class="year-badge">
+                    <span>ปีงบประมาณ 2568</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>โครงการและกิจกรรมป้องกันการทุจริต</h1>
+            <p>
+                การดำเนินงานเพื่อส่งเสริมคุณธรรม ความโปร่งใส
+                และป้องกันการทุจริตในสถานศึกษา
+            </p>
+        </div>
+    </section>
+
+    <!-- Tab Navigation -->
+    <nav class="tab-navigation">
+        <div class="container">
+            <div class="tab-menu">
+                <button class="tab-button active" onclick="openTab(event, 'tab-o33')">
+                    📈 o33 การเสริมสร้างวัฒนธรรมองค์กร
+                </button>
+                <button class="tab-button" onclick="openTab(event, 'tab-o34')">
+                    🛡️ o34 โครงการป้องกันการทุจริต
+                </button>
+                <button class="tab-button" onclick="openTab(event, 'tab-o35')">
+                    📊 o35 รายงานผลการดำเนินงาน
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Tab o33: การเสริมสร้างวัฒนธรรมองค์กร -->
+            <div id="tab-o33" class="tab-content active">
+                <div class="section-header">
+                    <span class="indicator-badge">ตัวชี้วัดย่อยที่ o33</span>
+                    <h2>การเสริมสร้างวัฒนธรรมองค์กร</h2>
+                    <p>
+                        กิจกรรมที่เกี่ยวข้องกับการเสริมสร้างวัฒนธรรมองค์กรที่เกี่ยวข้องกับการป้องกันการทุจริต
+                        การส่งเสริมคุณธรรม จริยธรรม
+                        และการสร้างจิตสำนึกที่ดีในการทำงานร่วมกัน
+                    </p>
+                </div>
+
+                <div class="project-card" id="project-o33.1">
+                    <div class="project-header" onclick="toggleProject('project-o33.1')">
+                        <div class="project-icon">🤝</div>
+                        <div class="project-title-section">
+                            <h3 class="project-title">
+                                โครงการจิตอาสาพัฒนาบ้าน วัด โรงเรียน
+                            </h3>
+                            <span class="project-type">วัฒนธรรมองค์กร</span>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+
+                    <div class="project-details">
+                        <div class="project-description">
+                            <p>
+                                โครงการที่มุ่งเน้นการพัฒนาจิตสำนึกของบุคลากรและนักเรียนในการทำประโยชน์เพื่อสังคม
+                                ส่งเสริมให้เกิดการมีส่วนร่วมในการพัฒนาชุมชน
+                                การดูแลรักษาสถานที่สาธารณะ
+                                และการสร้างความสัมพันธ์ที่ดีระหว่างสถานศึกษากับชุมชน
+                                ซึ่งเป็นส่วนหนึ่งของการเสริมสร้างวัฒนธรรมองค์กรที่เน้นความซื่อสัตย์
+                                สุจริต และความรับผิดชอบต่อสังคม
+                            </p>
+                        </div>
+
+                        <div class="project-info-grid">
+                            <div class="detail-item">
+                                <span class="detail-icon">🎯</span>
+                                <span><strong>วัตถุประสงค์:</strong>
+                                    เสริมสร้างวัฒนธรรมการทำงานเพื่อสังคมและชุมชน
+                                    พัฒนาจิตสำนึกสาธารณะ ส่งเสริมความซื่อสัตย์สุจริต</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">👥</span>
+                                <span><strong>กลุ่มเป้าหมาย:</strong>
+                                    บุคลากรและนักเรียนของสถานศึกษา รวม 3,074 คน</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📅</span>
+                                <span><strong>ระยะเวลาดำเนินการ:</strong> ตลอดปีงบประมาณ 2568
+                                    (ตุลาคม 2567 - กันยายน 2568)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span><strong>สถานที่:</strong> สถานศึกษา วัด ชุมชนรอบสถานศึกษา
+                                    และสถานที่สาธารณะต่างๆ</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">💰</span>
+                                <span><strong> งบประมาณ:</strong> 5,000 บาท</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎭</span>
+                                <span><strong>กิจกรรมหลัก:</strong> ทำความสะอาดสถานที่สาธารณะ,
+                                    ปรับปรุงภูมิทัศน์, กิจกรรมอาสาสมัคร,
+                                    การส่งเสริมคุณธรรม</span>
+                            </div>
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-number">1</span>
+                                <div class="stat-label">โครงการหลัก</div>
+                            </div>
+                            <!-- <div class="stat-item">
+                                <span class="stat-number">8</span>
+                                <div class="stat-label">กิจกรรมย่อย</div>
+                            </div> -->
+                            <div class="stat-item">
+                                <span class="stat-number">3,074</span>
+                                <div class="stat-label">ผู้เข้าร่วม</div>
+                            </div>
+                            <!-- <div class="stat-item">
+                                <span class="stat-number">15</span>
+                                <div class="stat-label">สถานที่</div>
+                            </div> -->
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://drive.google.com/file/d/1azN2NPBTKuf5O-qwwx2bvFWTas2REeFh/view?usp=drive_link"
+                                class="btn btn-primary">📄 ดูไฟล์โครงการ</a>
+                            <!-- <a href="#" class="btn btn-outline">📊 ดูรายละเอียดเพิ่มเติม</a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" id="project-o33.2">
+                    <div class="project-header" onclick="toggleProject('project-o33.2')">
+                        <div class="project-icon">🤝</div>
+                        <div class="project-title-section">
+                            <h3 class="project-title">
+                                นำเสนอหลักสูตรต้านทุจริตศึกษาไปใช้ในการจัดการเรียนการสอน
+                            </h3>
+                            <span class="project-type">วัฒนธรรมองค์กร</span>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+
+                    <div class="project-details">
+                        <div class="project-description">
+                            <p>
+                                การนำเสนอหลักสูตรต้านทุจริตศึกษาเพื่อการจัดการเรียนการสอน กิจกรรมเสริมอื่นๆ
+                                ที่เกี่ยวข้องกับการเสริมสร้างวัฒนธรรมองค์กรเพื่อป้องกันการทุจริต
+                                ได้แก่ โครงการต้านทุจริต กิจกรรมส่งเสริมความโปร่งใส
+                                แนวทางปฏิบัติเพื่อการป้องกันการทุจริต ประกาศไม่รับของขวัญ
+                                กิจกรรมอื่นๆ ที่เกี่ยวข้อง
+                            </p>
+                        </div>
+
+                        <div class="project-info-grid">
+                            <div class="detail-item">
+                                <span class="detail-icon">🎯</span>
+                                <span><strong>ระดับ:</strong>
+                                    ระดับประกาศนียบัตรวิชาชีพ (ปวช.)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">👥</span>
+                                <span><strong>รหัสวิชา 20000-2003:</strong>
+                                    รายวิชากิจกรรมเสริมสร้างสุจริต จิตอาสา</span>
+                            </div>
+                        </div>
+                          <div class="project-info-grid">
+                            <div class="detail-item">
+                                <span class="detail-icon">🎯</span>
+                                <span><strong>ระดับ:</strong>
+                                    ระดับประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">👥</span>
+                                <span><strong>รหัสวิชา 30000-2001:</strong>
+                                    รายวิชากิจกรรมเสริมสร้างสุจริต จิตอาสา</span>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <span class="detail-icon">🎭</span>
+                            <span><strong>กิจกรรมเสริมอื่นๆ
+                                    ที่เกี่ยวข้องกับการเสริมสร้างวัฒนธรรมองค์กรเพื่อป้องกันการทุจริต ได้แก่:</strong>
+                                การต้านทุจริต กิจกรรมส่งเสริมความโปร่งใส แนวทางปฏิบัติเพื่อการป้องกันการทุจริต
+                                ประกาศไม่รับของขวัญ กิจกรรมอื่นๆ ที่เกี่ยวข้อง</span>
+                        </div>
+                    </div>
+
+
+                    <div class="project-actions">
+                        <a href="https://drive.google.com/file/d/1iVXOo_8-gIPGfaMM6SHkq6ibz8PPD94r/view"
+                            class="btn btn-primary">📄 ดูไฟล์โครงการ</a>
+                        <!-- <a href="#" class="btn btn-outline">📊 ดูรายละเอียดเพิ่มเติม</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab o34: โครงการ/กิจกรรมที่เกี่ยวข้องกับการป้องกันการทุจริต -->
+        <div id="tab-o34" class="tab-content">
+            <div class="section-header">
+                <span class="indicator-badge">ตัวชี้วัดย่อยที่ o34</span>
+                <h2>โครงการ/กิจกรรมที่เกี่ยวข้องกับการป้องกันการทุจริต</h2>
+                <p>
+                    โครงการและกิจกรรมที่มีวัตถุประสงค์เพื่อป้องกันการทุจริต
+                    พัฒนาด้านคุณธรรมและความโปร่งใสของสถานศึกษา
+                    ส่งเสริมความซื่อสัตย์สุจริตและการมีจริยธรรมในการปฏิบัติงาน
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- โครงการที่ 1 -->
+                <div class="project-card" id="project-election">
+                    <div class="project-header" onclick="toggleProject('project-election')">
+                        <div class="project-icon">🗳️</div>
+                        <div class="project-title-section">
+                            <h3 class="project-title">
+                                โครงการเลือกตั้งคณะกรรมการองค์การนักวิชาชีพในอนาคตแห่งประเทศไทย
+                            </h3>
+                            <span class="project-type">ป้องกันการทุจริต</span>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+
+                    <div class="project-details">
+                        <div class="project-description">
+                            <p>
+                                โครงการจัดการเลือกตั้งคณะกรรมการองค์การนักวิชาชีพในอนาคตแห่งประเทศไทยที่เน้นความโปร่งใส
+                                ยุติธรรม และเป็นประชาธิปไตย
+                                เพื่อเป็นแบบอย่างที่ดีในการดำเนินกระบวนการเลือกตั้งที่สุจริต
+                                และเป็นการปลูกฝังจิตสำนึกประชาธิปไตยและการต่อต้านการทุจริตให้กับนักเรียน
+                            </p>
+                        </div>
+
+                        <div class="project-info-grid">
+                            <div class="detail-item">
+                                <span class="detail-icon">💰</span>
+                                <span><strong>งบประมาณ:</strong> 5,000 บาท</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📅</span>
+                                <span><strong>ช่วงเวลาดำเนินการ:</strong> ตุลาคม 2567 - กันยายน
+                                    2568</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">👥</span>
+                                <span><strong>ผู้เข้าร่วม:</strong> นักเรียนทุกชั้นปี รวม 3,074
+                                    คน</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎯</span>
+                                <span><strong>วัตถุประสงค์:</strong> ส่งเสริมประชาธิปไตย
+                                    ป้องกันการทุจริต เสริมสร้างความโปร่งใส</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span><strong>สถานที่:</strong>
+                                    วิทยาลัยอาชีวศึกษาอุดรธานี</span>
+                            </div>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://drive.google.com/file/d/1xdaj9ORhjF9db0gCJXRtjXweNyEz-lgY/view?usp=drive_link"
+                                class="btn btn-primary">📄 ดูไฟล์โครงการ</a>
+                            <!-- <a href="#" class="btn btn-outline">📈 ดูผลการดำเนินงาน</a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- โครงการที่ 2 -->
+                <div class="project-card" id="project-volunteer">
+                    <div class="project-header" onclick="toggleProject('project-volunteer')">
+                        <div class="project-icon">🤝</div>
+                        <div class="project-title-section">
+                            <h3 class="project-title">
+                                โครงการจิตอาสาพัฒนาบ้าน วัด โรงเรียน
+                            </h3>
+                            <span class="project-type">ป้องกันการทุจริต</span>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+
+                    <div class="project-details">
+                        <div class="project-description">
+                            <p>
+                                โครงการที่ส่งเสริมการมีจิตสำนึกสาธารณะ ความซื่อสัตย์สุจริต
+                                และการทำงานเพื่อส่วนรวม ผ่านกิจกรรมจิตอาสาเพื่อพัฒนาชุมชน
+                                สถานศึกษา และสถานที่ศักดิ์สิทธิ์
+                                เป็นการปลูกฝังค่านิยมที่ดีและป้องกันการทุจริต
+                            </p>
+                        </div>
+
+                        <div class="project-info-grid">
+                            <div class="detail-item">
+                                <span class="detail-icon">💰</span>
+                                <span><strong>งบประมาณ:</strong> 5,000 บาท</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📅</span>
+                                <span><strong>ช่วงเวลาดำเนินการ:</strong> ตลอดปีงบประมาณ
+                                    2568</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">👥</span>
+                                <span><strong>ผู้เข้าร่วม:</strong> บุคลากรและนักเรียน รวม
+                                    3,074 คน</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🎯</span>
+                                <span><strong>วัตถุประสงค์:</strong> เสริมสร้างจิตสำนึกสาธารณะ
+                                    ป้องกันการทุจริต</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">🏛️</span>
+                                <span><strong>พื้นที่ดำเนินการ:</strong> สถานศึกษา วัด
+                                    ชุมชนรอบสถานศึกษา และสถานที่สาธารณะต่างๆ</span>
+                            </div>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://drive.google.com/file/d/1xdaj9ORhjF9db0gCJXRtjXweNyEz-lgY/view?usp=drive_link"
+                                class="btn btn-primary">📄 ดูไฟล์โครงการ</a>
+                            <!-- <a href="#" class="btn btn-outline">📈 ดูผลการดำเนินงาน</a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- โครงการที่ 3 -->
+                <div class="project-card" id="project-3">
+                    <div class="project-header" onclick="toggleProject('project-3')">
+                        <div class="project-icon">🤝</div>
+                        <div class="project-title-section">
+                            <h3 class="project-title">
+                                กิจกรรมประกาศเจตนารมณ์ไม่รับของขวัญ
+                            </h3>
+                            <span class="project-type">ป้องกันการทุจริต</span>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+
+                    <div class="project-details">
+                        <div class="project-description">
+                            <p>
+                                สำนักงานคณะกรรมการการอาชีวศึกษา โดย นายยศพล เวณุโกเศศ
+                                เลขาธิการคณะกรรมการการ อาชีวศึกษา นำผู้บริหาร ครู
+                                บุคลากรทางการศึกษาอาชีวศึกษาทั้งภาครัฐ และเอกชน
+                                ร่วมประกาศเจตนารมณ์ ว่าจะ "ไม่รับของขวัญ
+                                และของกำนัลทุกชนิดจากการปฏิบัติหน้าที่ ทั้งในขณะ ก่อน
+                                และหลัง" เพื่ อร่วมกัน เสริมสร้างวัฒนธรรม
+                                และค่านิยมที่สุจริต ในการปฏิบัติงานของเจ้าหน้าที่ภาครัฐ
+                                ด้วยความถูกต้อง โปร่งใส เป็นธรรม ณ
+                                บริเวณหน้าอาคารสำนักงานคณะกรรมการการอาชีวศึกษา
+                                ซึ่งวิทยาลัยอาชีวศึกษาอุดรธานี นำโดย นางมนัสนันท์ ราตรีหว่าง
+                                ผู้อำนวยการวิทยาลัยฯ พร้อมคณะผู้บริหาร ครู
+                                และบุคลากรทางการศึกษา เข้าร่วม กิจกรรมในครั้งนี้
+                                เพื่อให้ความสำคัญ และสนับสนุนการดำเนินงานตามนโยบายรัฐบาล
+                                และแผนปฏิรูปประเทศ ด้านการป้องกัน
+                                และปราบปรามการทุจริตและประพฤติมิชอบ
+                            </p>
+                        </div>
+
+                        <!-- <div class="project-info-grid">
+                  <div class="detail-item">
+                    <span class="detail-icon">💰</span>
+                    <span><strong>งบประมาณ:</strong> 5,000 บาท</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-icon">📅</span>
+                    <span
+                      ><strong>ช่วงเวลาดำเนินการ:</strong> ตลอดปีงบประมาณ
+                      2568</span
+                    >
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-icon">👥</span>
+                    <span
+                      ><strong>ผู้เข้าร่วม:</strong> บุคลากรและนักเรียน รวม
+                      3,074 คน</span
+                    >
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-icon">🎯</span>
+                    <span
+                      ><strong>วัตถุประสงค์:</strong> เสริมสร้างจิตสำนึกสาธารณะ
+                      ป้องกันการทุจริต</span
+                    >
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-icon">🏛️</span>
+                    <span
+                      ><strong>พื้นที่ดำเนินการ:</strong> สถานศึกษา วัด
+                      ชุมชนรอบสถานศึกษา และสถานที่สาธารณะต่างๆ</span
+                    >
+                  </div>
+                </div> -->
+
+                        <div class="project-actions">
+                            <a href="https://drive.google.com/file/d/1-2Ut4rJncso-dMeWkCO-bgi08G7e98gu/view"
+                                class="btn btn-primary">📄 ดูไฟล์เอกสารกิจกรรม</a>
+                            <!-- <a href="#" class="btn btn-outline">📈 ดูผลการดำเนินงาน</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab o35: รายงานผลการดำเนินโครงการ -->
+        <div id="tab-o35" class="tab-content">
+            <div class="section-header">
+                <span class="indicator-badge">ตัวชี้วัดย่อยที่ o35</span>
+                <h2>
+                    รายงานผลการดำเนินโครงการ/กิจกรรมที่เกี่ยวข้องกับการป้องกันการทุจริตประจำปี
+                </h2>
+                <p>
+                    ผลการดำเนินงานตามโครงการและกิจกรรมที่เกี่ยวข้องกับการป้องกันการทุจริต
+                    พร้อมสรุปผลสำเร็จ การใช้จ่ายงบประมาณ
+                    และข้อเสนอแนะเพื่อการพัฒนาต่อไป
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- รายงานผลโครงการที่ 1 -->
+                <div class="project-card" id="report-election">
+                    <div class="project-header" onclick="toggleProject('report-election')">
+                        <div class="project-icon">📊</div>
+                        <div class="project-title-section">
+                            <h3 class="project-title">
+                                ผลการดำเนินงานโครงการเลือกตั้งคณะกรรมการองค์การนักวิชาชีพในอนาคตแห่งประเทศไทย
+                            </h3>
+                            <span class="project-type">รายงานผล</span>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+
+                    <div class="project-details">
+                        <div class="results-section">
+                            <div class="results-header">
+                                <h4>สรุปผลการดำเนินงาน</h4>
+                                <p>
+                                    โครงการเลือกตั้งดำเนินการเสร็จสิ้นเรียบร้อยแล้ว
+                                    บรรลุวัตถุประสงค์ที่กำหนดไว้
+                                </p>
+                            </div>
+
+                            <div class="results-grid">
+                                <div class="result-item">
+                                    <h5>ผลการดำเนินการโครงการ</h5>
+                                    <p>
+                                        จัดการเลือกตั้งสำเร็จลุล่วง มีสมาชิกองค์การฯ และ
+                                        ครูที่ปรึกษาชมรมเข้าร่วมลงคะแนนสูงถึง 84.86%
+                                        ของจำนวนผู้มีสิทธิ์
+                                        เกิดการเรียนรู้กระบวนการประชาธิปไตยที่โปร่งใสและสุจริต
+                                    </p>
+                                </div>
+                                <div class="result-item">
+                                    <h5>ผลการใช้จ่ายงบประมาณ</h5>
+                                    <p>
+                                        ใช้งบประมาณจริง 5,000 บาท จากงบประมาณที่ได้รับจัดสรร
+                                        50,00 บาท คิดเป็นร้อยละ 100 ของงบประมาณ
+                                    </p>
+                                </div>
+                                <div class="result-item">
+                                    <h5>ปัญหาและอุปสรรค</h5>
+                                    <p>
+                                        ไม่มีปัญหาและอุปสรรคที่สำคัญ
+                                        การดำเนินงานเป็นไปตามแผนที่วางไว้
+                                        มีการประสานงานที่ดีระหว่างทุกฝ่าย
+                                    </p>
+                                </div>
+                                <div class="result-item">
+                                    <h5>ข้อเสนอแนะ</h5>
+                                    <p>
+                                        ควรจัดกิจกรรมอบรมเพิ่มเติมเกี่ยวกับการเป็นผู้นำที่มีคุณธรรม
+                                        และขยายผลการจัดกิจกรรมในลักษณะนี้อย่างต่อเนื่อง
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://drive.google.com/file/d/19fsXgZBx3DMO5zXhpUt1gS7LAevSSD4b/view?usp=drive_link"
+                                class="btn btn-primary">📄 ดูไฟล์รายงานผลฉบับสมบูรณ์</a>
+                            <!-- <a href="#" class="btn btn-outline">📸 ดูภาพกิจกรรม</a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- รายงานผลโครงการที่ 2 -->
+                <div class="project-card" id="report-volunteer">
+                    <div class="project-header" onclick="toggleProject('report-volunteer')">
+                        <div class="project-icon">📈</div>
+                        <div class="project-title-section">
+                            <h3 class="project-title">
+                                ผลการดำเนินงานโครงการจิตอาสาพัฒนาบ้าน วัด โรงเรียน
+                            </h3>
+                            <span class="project-type">รายงานผล</span>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+
+                    <div class="project-details">
+                        <div class="results-section">
+                            <div class="results-header">
+                                <h4>สรุปผลการดำเนินงาน</h4>
+                                <p>
+                                    โครงการดำเนินการต่อเนื่องตลอดปี
+                                    ก่อให้เกิดประโยชน์แก่ชุมชนและสถานศึกษาอย่างเป็นรูปธรรม
+                                </p>
+                            </div>
+
+                            <div class="results-grid">
+                                <div class="result-item">
+                                    <h5>ผลการดำเนินการโครงการ</h5>
+                                    <p>มีผู้เข้าร่วมรวม 2,003 คนครั้ง คิดเป็นร้อยละ 91.09</p>
+                                </div>
+                                <div class="result-item">
+                                    <h5>ผลการใช้จ่ายงบประมาณ</h5>
+                                    <p>
+                                        ใช้งบประมาณจริง 5,000 บาท จากงบประมาณที่ได้รับจัดสรร
+                                        50,00 บาท คิดเป็นร้อยละ 100 ของงบประมาณ
+                                    </p>
+                                </div>
+                                <!-- <div class="result-item">
+                                        <h5>ปัญหาและอุปสรรค</h5>
+                                        <p>บางกิจกรรมต้องเลื่อนกำหนดเนื่องจากสภาพอากาศไม่เหมาะสม
+                                            แต่สามารถปรับแผนและดำเนินการทดแทนได้ทันที</p>
+                                    </div>
+                                    <div class="result-item">
+                                        <h5>ข้อเสนอแนะ</h5>
+                                        <p>ควรเพิ่มความร่วมมือกับหน่วยงานภายนอก ขยายพื้นที่กิจกรรมให้มากขึ้น
+                                            และจัดทำแผนการอาสาในระยะยาว</p>
+                                    </div> -->
+                            </div>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://drive.google.com/file/d/1Y5tNIRUeyuyW4DikCFXzWpGBIM5x_7qL/view?usp=sharing"
+                                class="btn btn-primary">📄 ดูไฟล์รายงานผลฉบับสมบูรณ์</a>
+                            <!-- <a href="#" class="btn btn-outline">📸 ดูภาพกิจกรรม</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>เกี่ยวกับโครงการ</h3>
+                    <p>
+                        โครงการและกิจกรรมป้องกันการทุจริตของวิทยาลัยอาชีวศึกษาอุดรธานี
+                    </p>
+                    <p>เพื่อส่งเสริมคุณธรรม ความโปร่งใส และจริยธรรมในการทำงาน</p>
+                </div>
+                <div class="footer-section">
+                    <h3>ลิงก์ที่เกี่ยวข้อง</h3>
+                    <p><a href="#">กลับหน้าหลัก ITA</a></p>
+                    <p><a href="#">ตัวชี้วัดที่ 10</a></p>
+                    <p><a href="#">ข้อมูลการเปิดเผย</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>ติดต่อเรา</h3>
+                    <p>วิทยาลัยอาชีวศึกษาอุดรธานี</p>
+                    <p>โทร: 042-246-690</p>
+                    <p>อีเมล: udvc@udvc.ac.th</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2568 วิทยาลัยอาชีวศึกษาอุดรธานี | สงวนลิขสิทธิ์</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching functionality
+        function openTab(event, tabName) {
+            var tabContents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+
+            var tabButtons = document.getElementsByClassName("tab-button");
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+
+        // Project card expand/collapse functionality
+        function toggleProject(projectId) {
+            const project = document.getElementById(projectId);
+            project.classList.toggle("expanded");
+        }
+
+        // Initialize page
+        document.addEventListener("DOMContentLoaded", function () {
+            //  อ่าน hash จาก URL และเปิด tab ที่ตรงกัน
+            const hash = window.location.hash;
+            if (hash) {
+                const targetTab = hash.substring(1); // เอา # ออก
+                const tabElement = document.getElementById(targetTab);
+                const buttonElement = document.querySelector(
+                    `[onclick*="${targetTab}"]`
+                );
+
+                if (tabElement && buttonElement) {
+                    // ปิด tab ทั้งหมดก่อน
+                    const allTabs = document.querySelectorAll(".tab-content");
+                    const allButtons = document.querySelectorAll(".tab-button");
+
+                    allTabs.forEach((tab) => tab.classList.remove("active"));
+                    allButtons.forEach((btn) => btn.classList.remove("active"));
+
+                    // เปิด tab ที่ต้องการ
+                    tabElement.classList.add("active");
+                    buttonElement.classList.add("active");
+                }
+            }
+            // Smooth scroll when clicking on tab buttons
+            const tabButtons = document.querySelectorAll(".tab-button");
+            tabButtons.forEach((button) => {
+                button.addEventListener("click", function () {
+                    document.querySelector(".main-content").scrollIntoView({
+                        behavior: "smooth",
+                    });
+                });
+            });
+
+            // Add enhanced hover effects
+            const cards = document.querySelectorAll(
+                ".project-card, .single-project"
+            );
+            cards.forEach((card) => {
+                card.addEventListener("mouseenter", function () {
+                    if (!this.classList.contains("expanded")) {
+                        this.style.transform = "translateY(-5px)";
+                    }
+                });
+
+                card.addEventListener("mouseleave", function () {
+                    if (!this.classList.contains("expanded")) {
+                        this.style.transform = "translateY(0)";
+                    }
+                });
+            });
+
+            // Add click sound effect (optional)
+            const headers = document.querySelectorAll(".project-header");
+            headers.forEach((header) => {
+                header.addEventListener("click", function () {
+                    // Add visual feedback for clicks
+                    this.style.transform = "scale(0.98)";
+                    setTimeout(() => {
+                        this.style.transform = "scale(1)";
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
