@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>อำนาจหน้าที่ - วิทยาลัยอาชีวศึกษาอุดรธานี</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.1);
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .title-section h1 {
+            color: #2d3748;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .title-section p {
+            color: #718096;
+            font-size: 14px;
+        }
+
+        .year-badge {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 20px 0 40px;
+        }
+
+        .page-hero {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 8px 32px rgba(220, 38, 38, 0.3);
+        }
+
+        .page-hero h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-hero p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .page-hero .subtitle {
+            font-size: 16px;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        /* Authority Categories */
+        .authority-categories {
+            display: grid;
+            gap: 30px;
+        }
+
+        .authority-category {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(220, 38, 38, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .authority-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(220, 38, 38, 0.1);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .category-icon {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .category-header h3 {
+            color: #2d3748;
+            font-size: 22px;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .category-description {
+            color: #4a5568;
+            font-size: 16px;
+            margin-bottom: 25px;
+            line-height: 1.7;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 10px;
+            border-left: 4px solid #dc2626;
+        }
+
+        /* Document Grid */
+        .document-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .document-item {
+            background: linear-gradient(135deg, #f8fafc, #ffffff);
+            border: 1px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .document-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .document-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-color: #dc2626;
+        }
+
+        .document-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .document-title {
+            color: #2d3748;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .document-meta {
+            color: #718096;
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .document-type {
+            background: #e2e8f0;
+            color: #4a5568;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .document-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .document-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+            background: linear-gradient(135deg, #b91c1c, #991b1b);
+        }
+
+        /* Summary Box */
+        .summary-box {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border: 1px solid #0284c7;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summary-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+        }
+
+        .summary-title {
+            color: #0369a1;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .summary-content {
+            color: #1e293b;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .summary-content ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .summary-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Duties List */
+        .duties-list {
+            background: #fef3c7;
+            border: 1px solid #d97706;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .duties-list h5 {
+            color: #92400e;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .duties-list ul {
+            padding-left: 20px;
+            color: #78350f;
+        }
+
+        .duties-list li {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            color: #dc2626;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #dc2626;
+        }
+
+        .back-button:hover {
+            background: #dc2626;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                text-align: center;
+            }
+
+            .page-hero h1 {
+                font-size: 24px;
+            }
+
+            .page-hero p {
+                font-size: 16px;
+            }
+
+            .authority-category {
+                padding: 20px;
+            }
+
+            .category-header h3 {
+                font-size: 18px;
+            }
+
+            .document-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .back-button {
+                position: relative;
+                margin: 0 auto 20px;
+                display: inline-flex;
+                background: white;
+                color: #dc2626;
+                border: 1px solid #dc2626;
+            }
+
+            .back-button:hover {
+                background: #dc2626;
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="/data-disclosure.html" class="back-button">
+        ← กลับสู่หน้าหลัก
+    </a>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">⚖️</div>
+                    <div class="title-section">
+                        <h1>อำนาจหน้าที่</h1>
+                        <p>Authority and Responsibilities</p>
+                    </div>
+                </div>
+                <div class="year-badge">
+                    <span>ปีงบประมาณ 2568</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Hero -->
+            <section class="page-hero">
+                <h1>อำนาจหน้าที่</h1>
+                <p>วิทยาลัยอาชีวศึกษาอุดรธานี</p>
+                <div class="subtitle">ข้อมูลหน้าที่และอำนาจของสถานศึกษาตามที่กฎหมายกำหนด</div>
+            </section>
+
+            <!-- Summary Box -->
+            <div class="summary-box">
+                <div class="summary-title">
+                    📋 สรุปอำนาจหน้าที่สถานศึกษา
+                </div>
+                <div class="summary-content">
+                    อำนาจหน้าที่ของวิทยาลัยอาชีวศึกษาอุดรธานี กำหนดโดยกฎหมายและระเบียบที่เกี่ยวข้อง เพื่อให้การดำเนินงานเป็นไปตามหลักการบริหารจัดการที่ดี และสอดคล้องกับนโยบายการศึกษาของประเทศ
+                    <ul>
+                        <li>คำสั่งมอบหมายหน้าที่และความรับผิดชอบ</li>
+                        <li>ระเบียบการบริหารสถานศึกษาอาชีวศึกษา</li>
+                        <li>กฎหมายว่าด้วยข้าราชการและบุคลากรทางการศึกษา</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Authority Categories -->
+            <div class="authority-categories">
+                <!-- 1. คำสั่งปฏิบัติหน้าที่ -->
+                <div class="authority-category">
+                    <div class="category-header">
+                        <div class="category-icon">1</div>
+                        <h3>คำสั่งปฏิบัติหน้าที่พิเศษ </h3>
+                    </div>
+                    <div class="category-description">
+                        คำสั่งมอบหมายหน้าที่และความรับผิดชอบของผู้บริหารและบุคลากรในสถานศึกษา เพื่อให้การปฏิบัติงานเป็นไปอย่างมีประสิทธิภาพและครอบคลุมภารกิจทุกด้าน 
+                    </div>
+                    <div class="document-grid">
+                        <!-- ผู้บริหาร -->
+                        <div class="document-item">
+                            <div class="document-title">ผู้อำนวยการสถานศึกษา</div>
+                            <div class="document-meta">
+                                <span class="document-type">ผู้บริหาร</span>
+                                <span>•</span>
+                                <span>ผู้อำนวยการ</span>
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>บริหารจัดการสถานศึกษา มีหน้าที่และความรับผิดชอบบังคับบัญชาบุคลากรในสถานศึกษา</li>
+                                    <li>บริหารกิจการสถานศึกษา การวางแผน การปฏิบัติงานการควบคุม</li>
+                                    <li>กำกับดูแล เกียวกับการบริหารงานวิชาการ งบประมาณ บริหารงานบุคคล การบรหารงานทั่วไป</li>
+                                    <li>ประสานงานกับหน่วยงานภายนอก</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">รองผู้อำนวยการฝ่ายวิชาการ</div>
+                            <div class="document-meta">
+                                <span class="document-type">ผู้บริหาร</span>
+                                <span>•</span>
+                                <span>รองผู้อำนวยการ</span>
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>บริหารงานวิชาการและการเรียนการสอน</li>
+                                    <li>พัฒนาหลักสูตรและสื่อการเรียนรู้</li>
+                                    <li>กำกับดูแลการจัดการศึกษา</li>
+                                    <li>ส่งเสริมการวิจัยและนวัตกรรม</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">รองผู้อำนวยการฝ่ายบริหารทรัพยากร</div>
+                            <div class="document-meta">
+                                <span class="document-type">ผู้บริหาร</span>
+                                <span>•</span>
+                                <span>รองผู้อำนวยการ</span>
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>บริหารงานบุคคลและการเงิน</li>
+                                    <li>จัดการทรัพยากรและพัสดุ</li>
+                                    <li>ดูแลอาคารสถานที่และสิ่งแวดล้อม</li>
+                                    <li>งานประชาสัมพันธ์และการตลาด</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">รองผู้อำนวยการฝ่ายพัฒนากิจการนักเรียนนักศึกษา</div>
+                            <div class="document-meta">
+                                <span class="document-type">ผู้บริหาร</span>
+                                <span>•</span>
+                                <span>รองผู้อำนวยการ</span>
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>พัฒนาคุณภาพชีวิตนักเรียน นักศึกษา</li>
+                                    <li>กิจกรรมนักเรียน นักศึกษา</li>
+                                    <li>แนะแนวการศึกษาและอาชีพ</li>
+                                    <li>สวัสดิการและสวัสดิภาพผู้เรียน</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <!-- งานหลัก -->
+                        <div class="document-item">
+                            <div class="document-title">งานหลักสูตร</div>
+                            <div class="document-meta">
+                                <span class="document-type">งานหลักสูตร</span>
+                                <span>•</span>
+                                <span>งานหลักสูตร</span>
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>จัดทำและพัฒนาหลักสูตรการเรียนการสอน</li>
+                                    <li>วิเคราะห์และประเมินหลักสูตร</li>
+                                    <li>ส่งเสริมสนับสนุนการจัดการเรียนรู้</li>
+                                    <li>ประสานงานเกี่ยวกับหลักสูตร</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">งานวิจัย พัฒนา นวัตกรรมและสิ่งประดิษฐ์</div>
+                            <div class="document-meta">
+                                <span class="document-type">งานวิจัย พัฒนา นวัตกรรมและสิ่งประดิษฐ์</span>
+                                <span>•</span>
+                                <span>งานวิจัย พัฒนา นวัตกรรมและสิ่งประดิษฐ์</span>
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>ส่งเสริมการวิจัยและพัฒนา</li>
+                                    <li>ประสานงานการวิจัย</li>
+                                    <li>เผยแพร่ผลงานวิจัย</li>
+                                    <li>สนับสนุนงานวิจัยของบุคลากร</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">งานบุคลากร</div>
+                            <div class="document-meta">
+                                <span class="document-type">งานบริหารทรัพยากร</span>
+                                <span>•</span>
+                                <span>งานบริหารทรัพยากร</span>
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>แนะนำ เผยแพร่ และดำเนินการเกี่ยวกับการบริหารงานบุคลากร</li>
+                                    <li>จัดทำแผนอัตรากำลังบุคลากรในสถานศึกษา</li>
+                                    <li>จัดทำแผนและดำเนินการพัฒนาบุคลากร</li>
+                                    <li>ควบคุม จัดทำสถิติ และรายงานเกี่ยวกับงานบุคลากร</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">งานการเงิน</div>
+                            <div class="document-meta">
+                                <span class="document-type">งานการเงิน</span>
+                                <span>•</span>
+                                <span>งานการเงิน</span>
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>จัดทำเอกสารและหลักฐานการงานเงินงบประมาณ</li>
+                                    <li>รับและเบิกจ่ายเงินตรวจสอบรายงานเงินคงเหลือ</li>
+                                    <li>ควบคุมการเบิกจ่ายเงินให้เป็นไปตามระเบียบ</li>
+                                    <li>เก็บรักษาเงินและเอกสารทางการเงิน</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">งานบัญชี</div>
+                            <div class="document-meta">
+                                <span class="document-type">งานบัญชี</span>
+                                <span>•</span>
+                                <span>งานบัญชี</span>
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>จัดทำเอกสารหลักฐาน นับที่การงานบัญชี</li>
+                                    <li>ปรับปรุงบัญชี การปิดบัญชีของสถานศึกษา</li>
+                                    <li>ตรวจสอบรายงานการเงินและงบการเงิน</li>
+                                    <li>จัดเก็บเอกสารทางบัญชี</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">งานพัสดุ</div>
+                            <div class="document-meta">
+                                <span class="document-type">งานพัสดุ</span>
+                                <span>•</span>
+                                <span>งานพัสดุ</span>
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>จัดวางระบบและปฏิบัติงานเกี่ยวกับการจัดหา การจัดซื้อ</li>
+                                    <li>เก็บรักษา การเบิกจ่าย สำรวจและการจำหน่ายพัสดุ</li>
+                                    <li>ควบคุมดูแลการใช้พัสดุของสถานศึกษา</li>
+                                    <li>จัดทำทะเบียนพัสดุและรายงาน</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">งานอาคารสถานที่</div>
+                            <div class="document-meta">
+                                <span class="document-type">งานอาคารสถานที่</span>
+                                <span>•</span>
+                                <span>งานอาคารสถานที่</span>
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>ประสานงานและวางแผนในการใช้ห้องของสถานศึกษา</li>
+                                    <li>กำหนดเขตหลักเกณฑ์ระบบใหม่การ</li>
+                                    <li>ดำเนินการเกี่ยวกับการจัดระบบการใช้สถานที่</li>
+                                    <li>ดูแลรักษาอาคารสถานที่</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">งานทะเบียน</div>
+                            <div class="document-meta">
+                                <span class="document-type">งานทะเบียน</span>
+                                <span>•</span>
+                                <span>งานทะเบียน</span>
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>จัดทำแบบพิมพ์ที่ใช้ในงานทะเบียน</li>
+                                    <li>ดำเนินการเกี่ยวกับการรับสมัครนักเรียนนักศึกษา</li>
+                                    <li>การลงทะเบียนเรียน</li>
+                                    <li>จัดทำและเก็บรักษาข้อมูลทะเบียนนักเรียน</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">งานประชาสัมพันธ์</div>
+                            <div class="document-meta">
+                                <span class="document-type">งานประชาสัมพันธ์</span>
+                                <span>•</span>
+                                <span>งานประชาสัมพันธ์</span>
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>วางแผนและเผยแพร่ข่าวสารที่เกี่ยวข้องกับสถานศึกษา</li>
+                                    <li>รวมทั้งข่าวสารอื่นๆ ให้บุคลากรในสถานศึกษา</li>
+                                    <li>และบุคคลทั่วไป</li>
+                                    <li>ประสานงานด้านการประชาสัมพันธ์</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">งานวางแผนและงบประมาณ</div>
+                            <div class="document-meta">
+                                <span class="document-type">งานวางแผนและงบประมาณ</span>
+                                <span>•</span>
+                                <span>งานวางแผนและงบประมาณ</span>
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>ส่งเสริม สนับสนุน นักเรียน นักศึกษา และบุคลากร</li>
+                                    <li>เกี่ยวกับการวิจัย การพัฒนาองค์ความรู้ เทคโนโลยี</li>
+                                    <li>นำไปใช้วิจัยในการจัดการเรียนการสอน</li>
+                                    <li>จัดทำแผนยุทธศาสตร์และงบประมาณ</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">งานประกันคุณภาพและมาตรฐานการศึกษา</div>
+                            <div class="document-meta">
+                                <span class="document-type">งานประกันคุณภาพและมาตรฐานการศึกษา</span>
+                                <span>•</span>
+                                <span>งานประกันคุณภาพและมาตรฐานการศึกษา</span>
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>ส่งเสริมสนับสนุนให้ทุกหลากรในสถานศึกษา</li>
+                                    <li>ให้มีความรู้ ความเข้าใจในหลักการ</li>
+                                    <li>จุดหมายและหลักเกณฑ์ของการประกันคุณภาพ</li>
+                                    <li>และมาตรฐานการศึกษา</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">งานกิจกรรมนักเรียนนักศึกษา</div>
+                            <div class="document-meta">
+                                <span class="document-type">งานกิจกรรมนักเรียนนักศึกษา</span>
+                                <span>•</span>
+                                <span>งานกิจกรรมนักเรียนนักศึกษา</span>
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>ส่งเสริมสนับสนุนให้นักเรียนนักศึกษา</li>
+                                    <li>มีกิจกรรมที่หลากหลาย</li>
+                                    <li>พัฒนาบุคลิกภาพและความเป็นผู้นำ</li>
+                                    <li>ประสานงานกิจกรรมต่างๆ</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">งานโครงการพิเศษและบริการชุมชน</div>
+                            <div class="document-meta">
+                                <span class="document-type">งานโครงการพิเศษและบริการชุมชน</span>
+                                <span>•</span>
+                                <span>งานโครงการพิเศษและบริการชุมชน</span>
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>จัดทำแผนและดำเนินการโครงการพิเศษ</li>
+                                    <li>ให้บริการวิชาการแก่ชุมชน</li>
+                                    <li>ประสานงานกับหน่วยงานภายนอก</li>
+                                    <li>ติดตามและประเมินผลโครงการ</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">งานศูนย์ข้อมูลสารสนเทศ</div>
+                            <div class="document-meta">
+                                <span class="document-type">งานศูนย์ข้อมูลสารสนเทศ</span>
+                                <span>•</span>
+                                
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>พัฒนาระบบข้อมูลสารสนเทศ</li>
+                                    <li>จัดเก็บและประมวลผลข้อมูล</li>
+                                    <li>จัดทำรายงานข้อมูลสารสนเทศ</li>
+                                    <li>ดูแลระบบเครือข่ายและคอมพิวเตอร์</li>
+                                    <li>พัฒนาระบบฐานข้อมูล</li>
+                                    <li>ให้บริการข้อมูลสารสนเทศ</li>
+                                    <li>จัดทำคู่มือการใช้งานระบบ</li>
+                                    <li>ดูแลความปลอดภัยของข้อมูล</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">งานวัดผลและประเมินผล</div>
+                            <div class="document-meta">
+                                <span class="document-type">งานวัดผลและประเมินผล</span>                     
+                                
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>ส่งเสริมสนับสนุนครูผู้สอนให้มีความรู้ความเข้าใจ</li>
+                                    <li>ดำเนินการเกี่ยวกับการวัดและประเมินผล</li>
+                                    <li>จัดทำระเบียบการวัดและประเมินผล</li>
+                                    <li>ควบคุมดูแลการดำเนินการวัดและประเมินผล</li>
+                                    <li>จัดทำเอกสารเกี่ยวกับการวัดและประเมินผล</li>
+                                    <li>รวบรวมและเผยแพร่ข้อมูลที่เกี่ยวข้องกับการวัดและประเมินผล</li>
+                                    <li>ประสานงานกับหน่วยงานต่างๆ ที่เกี่ยวข้อง</li>
+                                    <li>ติดตามและประเมินผลการปฏิบัติงาน</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">งานวิทยบริการและห้องสมุด</div>
+                            <div class="document-meta">
+                                <span class="document-type">งานวิทยบริการและห้องสมุด</span>
+                                
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>วางแผนในการพัฒนา และประเมินงานด้านวิทยบริการและห้องสมุดให้มีการใช้ทรัพยากรร่วมกัน</li>
+                                    <li>จัดระบบและดำเนินงานพัฒนาแหล่งเรียนรู้</li>
+                                    <li>จัดทำและให้บริการสื่อสิ่งพิมพ์และสื่ออิเล็กทรอนิกส์</li>
+                                    <li>พัฒนาบุคลากรให้มีความรู้ความสามารถในการใช้นวัตกรรมและเทคโนโลยี</li>
+                                    <li>ประสานความร่วมมือกับหน่วยงานต่างๆ ในการให้บริการ</li>
+                                    <li>จัดระบบสารสนเทศเพื่อการบริหารและการบริการ</li>
+                                    <li>ดำเนินการให้บริการวิทยบริการและห้องสมุด</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">งานอาชีวศึกษาระบบทวิภาคี</div>
+                            <div class="document-meta">
+                                <span class="document-type">งานอาชีวศึกษาระบบทวิภาคี</span>
+
+                            </div>
+                            <div class="duties-list">
+                                <h5>หน้าที่หลัก:</h5>
+                                <ul>
+                                    <li>จัดการศึกษาอาชีวศึกษาระบบทวิภาคี</li>
+                                    <li>ประสานงานกับสถานประกอบการ</li>
+                                    <li>จัดทำแผนการเรียนและแผนการฝึกอาชีพ</li>
+                                    <li>นิเทศติดตามและประเมินผล</li>
+                                    <li>ประสานความร่วมมือกับสถานประกอบการ</li>
+                                    <li>จัดทำข้อตกลงความร่วมมือ (MOU)</li>
+                                    <li>จัดปฐมนิเทศและสัมมนานักเรียนนักศึกษา</li>
+                                    <li>ติดตามและประเมินผลการฝึกงาน</li>
+                                </ul>
+                            </div>
+                            <a href="https://drive.google.com/file/d/13GlV3HT_MQ7zwwGHn7Ir2bItvC13R0ut/view" class="document-link" target="_blank">
+                                📄 ดูคำสั่งฉบับสมบูรณ์
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. ระเบียบสำนักงานคณะกรรมการการอาชีวศึกษา -->
+                <div class="authority-category">
+                    <div class="category-header">
+                        <div class="category-icon">2</div>
+                        <h3>ระเบียบสำนักงานคณะกรรมการการอาชีวศึกษา ว่าด้วยการบริหารสถานศึกษา พ.ศ. 2552</h3>
+                    </div>
+                    <div class="category-description">
+                        ระเบียบที่กำหนดหลักเกณฑ์และวิธีการบริหารสถานศึกษาอาชีวศึกษา ครอบคลุมการบริหารวิชาการ การบริหารงบประมาณ การบริหารงานบุคคล และการบริหารทั่วไป ประกอบด้วย 4 หมวด
+                    </div>
+                    <div class="document-grid">
+                        <div class="document-item">
+                            <div class="document-title">หมวด 1 หน้าที่และการบริหารงานของสถานศึกษา</div>
+                            <div class="document-meta">
+                                <span class="document-type">ระเบียบ</span>
+                                <span>•</span>
+                                <span>การบริหารงาน</span>
+                            </div>
+                            <a href="https://anyflip.com/ikfhy/avdh" class="document-link" target="_blank">
+                                📜 ดูระเบียบฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">หมวด 2 หน้าที่ของงานและแผนก</div>
+                            <div class="document-meta">
+                                <span class="document-type">ระเบียบ</span>
+                                <span>•</span>
+                                <span>หน้าที่งาน</span>
+                            </div>
+                            <a href="https://anyflip.com/ikfhy/avdh" class="document-link" target="_blank">
+                                📜 ดูระเบียบฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">หมวด 3 บุคลากรในสถานศึกษาและการบริหารงาน</div>
+                            <div class="document-meta">
+                                <span class="document-type">ระเบียบ</span>
+                                <span>•</span>
+                                <span>บุคลากร</span>
+                            </div>
+                            <a href="https://anyflip.com/ikfhy/avdh" class="document-link" target="_blank">
+                                📜 ดูระเบียบฉบับสมบูรณ์
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">หมวด 4 คณะกรรมการในสถานศึกษา</div>
+                            <div class="document-meta">
+                                <span class="document-type">ระเบียบ</span>
+                                <span>•</span>
+                                <span>คณะกรรมการ</span>
+                            </div>
+                            <a href="https://anyflip.com/ikfhy/avdh" class="document-link" target="_blank">
+                                📜 ดูระเบียบฉบับสมบูรณ์
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. พระราชบัญญัติข้าราชการและบุคลากรทางการศึกษา -->
+                <div class="authority-category">
+                    <div class="category-header">
+                        <div class="category-icon">3</div>
+                        <h3>พระราชบัญญัติข้าราชการครูและบุคลากรทางการศึกษา พ.ศ. 2547 และแก้ไขเพิ่มเติม</h3>
+                    </div>
+                    <div class="category-description">
+                        กฎหมายที่กำหนดสถานะ สิทธิ หน้าที่ และการบริหารงานบุคคลของข้าราชการครูและบุคลากรทางการศึกษา รวมถึงการพัฒนาวิชาชีพและการประเมินผลการปฏิบัติงาน
+                    </div>
+                    <div class="document-grid">
+                        <div class="document-item">
+                            <div class="document-title">พระราชบัญญัติข้าราชการครูและบุคลากรทางการศึกษา พ.ศ. 2547</div>
+                            <div class="document-meta">
+                                <span class="document-type">พระราชบัญญัติ</span>
+                                <span>•</span>
+                                <span>ฉบับเดิม</span>
+                            </div>
+                            <a href="https://otepc.go.th/images/00_YEAR2562/10_PM/พ.ร.บ.ระเบียบข้าราชการครูฯ_พ.ศ._2547_.pdf" class="document-link" target="_blank">
+                                ⚖️ ดูพระราชบัญญัติ
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">พระราชบัญญัติข้าราชการครูและบุคลากรทางการศึกษา (ฉบับที่ 2) พ.ศ. 2551</div>
+                            <div class="document-meta">
+                                <span class="document-type">พระราชบัญญัติ</span>
+                                <span>•</span>
+                                <span>แก้ไขเพิ่มเติม</span>
+                            </div>
+                            <a href="https://otepc.go.th/images/00_YEAR2562/09_PG/act-teacher-2-2551.PDF" class="document-link" target="_blank">
+                                ⚖️ ดูแก้ไขเพิ่มเติม
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">พระราชบัญญัติข้าราชการครูและบุคลากรทางการศึกษา (ฉบับที่ 3) พ.ศ. 2553</div>
+                            <div class="document-meta">
+                                <span class="document-type">พระราชบัญญัติ</span>
+                                <span>•</span>
+                                <span>แก้ไขเพิ่มเติม</span>
+                            </div>
+                            <a href="https://otepc.go.th/images/00_YEAR2562/09_PG/act-teacher-3-2553.PDF" class="document-link" target="_blank">
+                                ⚖️ ดูแก้ไขเพิ่มเติม
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">พระราชบัญญัติข้าราชการครูและบุคลากรทางการศึกษา (ฉบับที่ 4) พ.ศ. 2562</div>
+                            <div class="document-meta">
+                                <span class="document-type">พระราชบัญญัติ</span>
+                                <span>•</span>
+                                <span>แก้ไขเพิ่มเติม</span>
+                            </div>
+                            <a href="https://otepc.go.th/images/00_YEAR2566/09_PG/act-teacher-4-2562.pdf" class="document-link" target="_blank">
+                                ⚖️ ดูแก้ไขเพิ่มเติม
+                            </a>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-title">กฎ ระเบียบ และประกาศที่เกี่ยวข้อง</div>
+                            <div class="document-meta">
+                                <span class="document-type">รวมเอกสาร</span>
+                                <span>•</span>
+                                <span>กฎหมายย่อย</span>
+                            </div>
+                            <a href="https://www.moe.go.th/พระราชบัญญัติระเบียบข้/" class="document-link" target="_blank">
+                                📋 ดูกฎ ระเบียบ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2568 วิทยาลัยอาชีวศึกษาอุดรธานี | อำนาจหน้าที่ตามกฎหมาย</p>
+        </div>
+    </footer>
+</body>
+</html>
